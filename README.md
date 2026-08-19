@@ -1,13 +1,8 @@
 <img width="100%" src="header.svg">
 
-```text
-C:\vtongtv> dir /s *.py *.ts
-19 paper reimplementations found. 0 frameworks used.
-```
+ml & full-stack intern @ wilo SE (pune). previously built rag chatbots + drone cv pipelines @ dscribe.ai (remote, usa). shipped 2 deployed ai systems -- air traffic control multi-agent platform and bengaluru traffic violation detector. 3 publications (springer + 2x IEEE). patent pending. 19 landmark ml papers rebuilt from scratch, 800+ tests written. [leetcode knight 1954](https://leetcode.com/u/VT2077/).
 
-i rebuild landmark papers from scratch -- no frameworks, no shortcuts. **numpy first**, pytorch second, never sklearn. currently building multi-agent systems that argue about air traffic. bengaluru-based, wilo-trained, springer-published, patent pending.
-
-<img width="100%" src="https://ghchart.rshah.org/00ff88/VTongTV" alt="contribution graph" />
+<img width="100%" src="https://ghchart.rshah.org/39d353/VTongTV" alt="contribution graph" />
 
 <img width="100%" src="divider.svg">
 
@@ -17,6 +12,8 @@ i rebuild landmark papers from scratch -- no frameworks, no shortcuts. **numpy f
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="28" height="28" alt="Python" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="28" height="28" alt="TypeScript" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="28" height="28" alt="JavaScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" width="28" height="28" alt="Go" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="28" height="28" alt="C++" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="28" height="28" alt="PyTorch" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="28" height="28" alt="NumPy" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" width="28" height="28" alt="FastAPI" />
@@ -29,13 +26,12 @@ i rebuild landmark papers from scratch -- no frameworks, no shortcuts. **numpy f
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" width="28" height="28" alt="Redis" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="28" height="28" alt="Linux" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="28" height="28" alt="Git" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="28" height="28" alt="VS Code" />
 </p>
 
 <table width="100%">
 <tr><td valign="top" width="25%"><b>ML / DL</b><br/>XGBoost, LightGBM, CatBoost, YOLOv8, SAM, TabM, HuggingFace, LangChain, LlamaIndex</td>
 <td valign="top" width="25%"><b>full-stack</b><br/>Next.js 14, Node/Express, Vite 6, TailwindCSS v4, shadcn/ui, Three.js, Leaflet, CesiumJS</td>
-<td valign="top" width="25%"><b>infra</b><br/>GKE, Helm, SQLite (WAL), n8n, Redis, Prometheus, Grafana, NSIS, Git LFS</td>
+<td valign="top" width="25%"><b>infra</b><br/>GKE, Helm, SQLite (WAL), n8n, Prometheus, Grafana, NSIS, Git LFS, Electron</td>
 <td valign="top" width="25%"><b>specialties</b><br/>RAG pipelines, conformal prediction, SHAP, OCR, CV inference, circuit breakers, SSE streaming</td>
 </tr>
 </table>
@@ -67,55 +63,7 @@ i rebuild landmark papers from scratch -- no frameworks, no shortcuts. **numpy f
 
 ### the archive -- 19 papers from scratch
 
-every paper rebuilt from the original. no wrappers, no sklearn, no pretrained downloads. **numpy only** where it matters. pytorch where the model demands it.
-
-<table width="100%">
-<tr>
-<td width="25%" valign="top">
-
-<b>classical</b><br/>
-<br/>
-<b>1990</b> [`RNN`](https://github.com/VTongTV/RNN-from-scratch)<br/>
-<b>1998</b> [`LeNet-5`](https://github.com/VTongTV/LeNet-5-scratch)<br/>
-<b>1998</b> [`Naive Bayes`](https://github.com/VTongTV/Naive-bayes-scratch)<br/>
-<b>1998</b> [`SVM`](https://github.com/VTongTV/SVM-From-Scratch)
-
-</td>
-<td width="25%" valign="top">
-
-<b>embeddings</b><br/>
-<br/>
-<b>2003</b> [`LDA`](https://github.com/VTongTV/lda-from-scratch)<br/>
-<b>2013</b> [`Word2Vec`](https://github.com/VTongTV/word2vec-from-scratch)<br/>
-<b>2014</b> [`GloVe`](https://github.com/VTongTV/glove-from-scratch)
-
-</td>
-<td width="25%" valign="top">
-
-<b>nlp / sequence</b><br/>
-<br/>
-<b>2014</b> [`Seq2Seq`](https://github.com/VTongTV/seq2seq-from-scratch)<br/>
-<b>2015</b> [`Bahdanau`](https://github.com/VTongTV/bahdanau-attention-from-scratch)<br/>
-<b>2017</b> [`Transformer`](https://github.com/VTongTV/attention-from-scratch)<br/>
-<b>2018</b> [`ELMo`](https://github.com/VTongTV/elmo-from-scratch)<br/>
-<b>2019</b> [`BERT`](https://github.com/VTongTV/bert-from-scratch)
-
-</td>
-<td width="25%" valign="top">
-
-<b>vision</b><br/>
-<br/>
-<b>2012</b> [`AlexNet`](https://github.com/VTongTV/AlexNet-scratch)<br/>
-<b>2015</b> [`ResNet`](https://github.com/VTongTV/Resnet-from-scratch)<br/>
-<b>2015</b> [`Faster R-CNN`](https://github.com/VTongTV/faster-rcnn-from-scratch)<br/>
-<b>2015</b> [`FCN`](https://github.com/VTongTV/FCN-from-scratch)<br/>
-<b>2015</b> [`U-Net`](https://github.com/VTongTV/U-net-from-scratch)<br/>
-<b>2018</b> [`MobileNetV2`](https://github.com/VTongTV/MobileNetV2-from-scratch)<br/>
-<b>2021</b> [`ViT`](https://github.com/VTongTV/vision-transformer-from-scratch)
-
-</td>
-</tr>
-</table>
+<img width="100%" src="archive.svg" />
 
 <img width="100%" src="divider.svg">
 
@@ -139,7 +87,7 @@ rag chatbot with multi-llm routing (claude/deepseek/kimi). qwen vision for handw
 
 ### achievements
 
-[leetcode knight 1954](https://leetcode.com/u/VT2077/) -- 450+ solved -- gdg cloud lead -- sci-tech innovation hackathon winner -- sih 2025 finalist -- 11 gcp skill badges -- aws academy graduate
+gdg cloud lead -- sci-tech innovation hackathon winner -- sih 2025 finalist -- 11 gcp skill badges -- aws academy graduate
 
 ### recently active
 
