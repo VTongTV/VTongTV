@@ -1,22 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="440" viewBox="0 0 800 440">
   <style>
     text{font-family:'Courier New',monospace}
-    @keyframes scanroll{0%{transform:translateY(-2px)}100%{transform:translateY(520px)}}
+    @keyframes scanroll{0%{transform:translateY(-2px)}100%{transform:translateY(440px)}}
     .sr{animation:scanroll 5s linear infinite}
+    @keyframes flicker{0%,97%,100%{opacity:1}98%{opacity:.92}}
+    .fl{animation:flicker 6s linear infinite}
+    @keyframes led{0%,100%{opacity:1}50%{opacity:.4}}
+    .led{animation:led 1.4s ease-in-out infinite}
   </style>
   <defs>
     <pattern id="sc" width="2" height="2" patternUnits="userSpaceOnUse">
       <rect width="2" height="1" fill="transparent"/>
       <rect y="1" width="2" height="1" fill="#000" opacity=".06"/>
     </pattern>
+    <clipPath id="tickClip2"><rect x="360" y="420" width="360" height="11"/></clipPath>
+    @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-2800px)}}
+    .tick2{animation:tick 40s linear infinite}
   </defs>
 
-  <rect width="800" height="520" fill="#008080"/>
-  <rect width="800" height="520" fill="url(#sc)"/>
+  <rect width="800" height="440" fill="#008080"/>
+  <rect width="800" height="440" fill="url(#sc)"/>
 
-  <rect x="6" y="4" width="788" height="512" fill="#c0c0c0"/>
-  <rect x="6" y="4" width="788" height="512" fill="none" stroke="#fff" stroke-width="2"/>
-  <rect x="8" y="6" width="784" height="508" fill="none" stroke="#808080" stroke-width="1"/>
+  <rect x="6" y="4" width="788" height="432" fill="#c0c0c0"/>
+  <rect x="6" y="4" width="788" height="432" fill="none" stroke="#fff" stroke-width="2"/>
+  <rect x="8" y="6" width="784" height="428" fill="none" stroke="#808080" stroke-width="1"/>
 
   <rect x="8" y="6" width="784" height="20" fill="#000080"/>
   <text x="18" y="20" font-size="11" fill="#fff" font-weight="700">THE ARCHIVE -- 19 PAPERS FROM SCRATCH</text>
@@ -30,228 +37,247 @@
   <rect x="765" y="9" width="14" height="14" fill="none" stroke="#fff" stroke-width="1"/>
   <line x1="768" y1="16" x2="776" y2="16" stroke="#000" stroke-width="1.5"/>
 
-  <!-- Bento grid: 4 columns, gap=6, padding=16 -->
-  <!-- Col x: 16, 200, 384, 568 | tile width: 178 -->
-  <!-- Row y offsets from top=32: 32, 86, 140, 194, 248, 302, 356 -->
+  <!-- BENTO GRID: 4 cols, gap=4 -->
+  <!-- Cols: 14, 205, 396, 587 | Width: 187 | Wide: 378 -->
+  <!-- Rows: 30, 90, 150, 210, 270, 330 | Height: 56 | Tall: 116 -->
 
-  <!-- ══ CLASSICAL (amber #ffaa00) ══ -->
-  <!-- RNN - row 1 -->
-  <rect x="16" y="32" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="16" y="32" width="178" height="1" fill="#fff"/>
-  <rect x="16" y="81" width="178" height="1" fill="#808080"/>
-  <rect x="16" y="32" width="3" height="50" fill="#ffaa00"/>
-  <text x="28" y="49" font-size="9" fill="#ffaa00" opacity=".6">1990</text>
-  <text x="28" y="66" font-size="14" fill="#ffaa00" font-weight="700">RNN</text>
-  <text x="152" y="49" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="152" y="52" width="34" height="3" fill="#ffaa00" opacity=".4"/>
+  <!-- ROW 1 -->
+  <!-- RNN (tall) C1 R1-R2 amber -->
+  <g class="fl">
+    <rect x="14" y="30" width="187" height="116" fill="#0a0a0c"/>
+    <rect x="14" y="30" width="187" height="116" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="15" y="31" width="185" height="114" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="14" y="30" width="3" height="116" fill="#ffaa00" opacity=".6"/>
+    <text x="26" y="52" font-size="10" fill="#ffaa00" opacity=".5">1990</text>
+    <text x="26" y="76" font-size="22" fill="#ffaa00" font-weight="700">RNN</text>
+    <text x="26" y="98" font-size="8" fill="#ffaa00" opacity=".4">elman -- where it all starts</text>
+    <text x="160" y="52" font-size="7" fill="#ffaa00" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- LeNet-5 - row 2 -->
-  <rect x="16" y="88" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="16" y="88" width="178" height="1" fill="#fff"/>
-  <rect x="16" y="137" width="178" height="1" fill="#808080"/>
-  <rect x="16" y="88" width="3" height="50" fill="#ffaa00"/>
-  <text x="28" y="105" font-size="9" fill="#ffaa00" opacity=".6">1998</text>
-  <text x="28" y="122" font-size="14" fill="#ffaa00" font-weight="700">LeNet-5</text>
-  <text x="152" y="105" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="152" y="108" width="34" height="3" fill="#ffaa00" opacity=".4"/>
+  <!-- LeNet-5 C2 R1 amber -->
+  <g class="fl">
+    <rect x="205" y="30" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="205" y="30" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="206" y="31" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="205" y="30" width="3" height="56" fill="#ffaa00" opacity=".6"/>
+    <text x="217" y="50" font-size="10" fill="#ffaa00" opacity=".5">1998</text>
+    <text x="217" y="72" font-size="16" fill="#ffaa00" font-weight="700">LeNet-5</text>
+    <text x="351" y="50" font-size="7" fill="#ffaa00" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- Naive Bayes - row 3 -->
-  <rect x="16" y="144" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="16" y="144" width="178" height="1" fill="#fff"/>
-  <rect x="16" y="193" width="178" height="1" fill="#808080"/>
-  <rect x="16" y="144" width="3" height="50" fill="#ffaa00"/>
-  <text x="28" y="161" font-size="9" fill="#ffaa00" opacity=".6">1998</text>
-  <text x="28" y="178" font-size="14" fill="#ffaa00" font-weight="700">Naive Bayes</text>
-  <text x="152" y="161" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="152" y="164" width="34" height="3" fill="#ffaa00" opacity=".4"/>
+  <!-- LDA C3 R1 green -->
+  <g class="fl">
+    <rect x="396" y="30" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="396" y="30" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="397" y="31" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="396" y="30" width="3" height="56" fill="#00ff88" opacity=".6"/>
+    <text x="408" y="50" font-size="10" fill="#00ff88" opacity=".5">2003</text>
+    <text x="408" y="72" font-size="16" fill="#00ff88" font-weight="700">LDA</text>
+    <text x="542" y="50" font-size="7" fill="#00ff88" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- SVM - row 4 -->
-  <rect x="16" y="200" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="16" y="200" width="178" height="1" fill="#fff"/>
-  <rect x="16" y="249" width="178" height="1" fill="#808080"/>
-  <rect x="16" y="200" width="3" height="50" fill="#ffaa00"/>
-  <text x="28" y="217" font-size="9" fill="#ffaa00" opacity=".6">1998</text>
-  <text x="28" y="234" font-size="14" fill="#ffaa00" font-weight="700">SVM</text>
-  <text x="152" y="217" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="152" y="220" width="34" height="3" fill="#ffaa00" opacity=".4"/>
+  <!-- Seq2Seq C4 R1 teal -->
+  <g class="fl">
+    <rect x="587" y="30" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="587" y="30" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="588" y="31" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="587" y="30" width="3" height="56" fill="#00d9ff" opacity=".6"/>
+    <text x="599" y="50" font-size="10" fill="#00d9ff" opacity=".5">2014</text>
+    <text x="599" y="72" font-size="16" fill="#00d9ff" font-weight="700">Seq2Seq</text>
+    <text x="733" y="50" font-size="7" fill="#00d9ff" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- ══ EMBEDDINGS (green #00ff88) ══ -->
-  <!-- LDA - row 1 -->
-  <rect x="200" y="32" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="200" y="32" width="178" height="1" fill="#fff"/>
-  <rect x="200" y="81" width="178" height="1" fill="#808080"/>
-  <rect x="200" y="32" width="3" height="50" fill="#00ff88"/>
-  <text x="212" y="49" font-size="9" fill="#00ff88" opacity=".6">2003</text>
-  <text x="212" y="66" font-size="14" fill="#00ff88" font-weight="700">LDA</text>
-  <text x="336" y="49" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="336" y="52" width="34" height="3" fill="#00ff88" opacity=".4"/>
+  <!-- ROW 2 -->
+  <!-- Naive Bayes C2 R2 amber -->
+  <g class="fl">
+    <rect x="205" y="90" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="205" y="90" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="206" y="91" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="205" y="90" width="3" height="56" fill="#ffaa00" opacity=".6"/>
+    <text x="217" y="110" font-size="10" fill="#ffaa00" opacity=".5">1998</text>
+    <text x="217" y="132" font-size="14" fill="#ffaa00" font-weight="700">Naive Bayes</text>
+    <text x="351" y="110" font-size="7" fill="#ffaa00" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- Word2Vec - row 2 -->
-  <rect x="200" y="88" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="200" y="88" width="178" height="1" fill="#fff"/>
-  <rect x="200" y="137" width="178" height="1" fill="#808080"/>
-  <rect x="200" y="88" width="3" height="50" fill="#00ff88"/>
-  <text x="212" y="105" font-size="9" fill="#00ff88" opacity=".6">2013</text>
-  <text x="212" y="122" font-size="14" fill="#00ff88" font-weight="700">Word2Vec</text>
-  <text x="336" y="105" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="336" y="108" width="34" height="3" fill="#00ff88" opacity=".4"/>
+  <!-- Word2Vec C3 R2 green -->
+  <g class="fl">
+    <rect x="396" y="90" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="396" y="90" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="397" y="91" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="396" y="90" width="3" height="56" fill="#00ff88" opacity=".6"/>
+    <text x="408" y="110" font-size="10" fill="#00ff88" opacity=".5">2013</text>
+    <text x="408" y="132" font-size="14" fill="#00ff88" font-weight="700">Word2Vec</text>
+    <text x="542" y="110" font-size="7" fill="#00ff88" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- GloVe - row 3 -->
-  <rect x="200" y="144" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="200" y="144" width="178" height="1" fill="#fff"/>
-  <rect x="200" y="193" width="178" height="1" fill="#808080"/>
-  <rect x="200" y="144" width="3" height="50" fill="#00ff88"/>
-  <text x="212" y="161" font-size="9" fill="#00ff88" opacity=".6">2014</text>
-  <text x="212" y="178" font-size="14" fill="#00ff88" font-weight="700">GloVe</text>
-  <text x="336" y="161" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="336" y="164" width="34" height="3" fill="#00ff88" opacity=".4"/>
+  <!-- Bahdanau C4 R2 teal -->
+  <g class="fl">
+    <rect x="587" y="90" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="587" y="90" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="588" y="91" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="587" y="90" width="3" height="56" fill="#00d9ff" opacity=".6"/>
+    <text x="599" y="110" font-size="10" fill="#00d9ff" opacity=".5">2015</text>
+    <text x="599" y="132" font-size="14" fill="#00d9ff" font-weight="700">Bahdanau</text>
+    <text x="733" y="110" font-size="7" fill="#00d9ff" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- ══ NLP / SEQUENCE (teal #00d9ff) ══ -->
-  <!-- Seq2Seq - row 1 -->
-  <rect x="384" y="32" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="384" y="32" width="178" height="1" fill="#fff"/>
-  <rect x="384" y="81" width="178" height="1" fill="#808080"/>
-  <rect x="384" y="32" width="3" height="50" fill="#00d9ff"/>
-  <text x="396" y="49" font-size="9" fill="#00d9ff" opacity=".6">2014</text>
-  <text x="396" y="66" font-size="14" fill="#00d9ff" font-weight="700">Seq2Seq</text>
-  <text x="520" y="49" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="520" y="52" width="34" height="3" fill="#00d9ff" opacity=".4"/>
+  <!-- ROW 3 -->
+  <!-- SVM C1 R3 amber -->
+  <g class="fl">
+    <rect x="14" y="150" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="14" y="150" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="15" y="151" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="14" y="150" width="3" height="56" fill="#ffaa00" opacity=".6"/>
+    <text x="26" y="170" font-size="10" fill="#ffaa00" opacity=".5">1998</text>
+    <text x="26" y="192" font-size="16" fill="#ffaa00" font-weight="700">SVM</text>
+    <text x="160" y="170" font-size="7" fill="#ffaa00" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- Bahdanau - row 2 -->
-  <rect x="384" y="88" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="384" y="88" width="178" height="1" fill="#fff"/>
-  <rect x="384" y="137" width="178" height="1" fill="#808080"/>
-  <rect x="384" y="88" width="3" height="50" fill="#00d9ff"/>
-  <text x="396" y="105" font-size="9" fill="#00d9ff" opacity=".6">2015</text>
-  <text x="396" y="122" font-size="14" fill="#00d9ff" font-weight="700">Bahdanau</text>
-  <text x="520" y="105" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="520" y="108" width="34" height="3" fill="#00d9ff" opacity=".4"/>
+  <!-- GloVe C2 R3 green -->
+  <g class="fl">
+    <rect x="205" y="150" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="205" y="150" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="206" y="151" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="205" y="150" width="3" height="56" fill="#00ff88" opacity=".6"/>
+    <text x="217" y="170" font-size="10" fill="#00ff88" opacity=".5">2014</text>
+    <text x="217" y="192" font-size="16" fill="#00ff88" font-weight="700">GloVe</text>
+    <text x="351" y="170" font-size="7" fill="#00ff88" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- Transformer - row 3 -->
-  <rect x="384" y="144" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="384" y="144" width="178" height="1" fill="#fff"/>
-  <rect x="384" y="193" width="178" height="1" fill="#808080"/>
-  <rect x="384" y="144" width="3" height="50" fill="#00d9ff"/>
-  <text x="396" y="161" font-size="9" fill="#00d9ff" opacity=".6">2017</text>
-  <text x="396" y="178" font-size="14" fill="#00d9ff" font-weight="700">Transformer</text>
-  <text x="520" y="161" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="520" y="164" width="34" height="3" fill="#00d9ff" opacity=".4"/>
+  <!-- Transformer (wide) C3-C4 R3 teal -->
+  <g class="fl">
+    <rect x="396" y="150" width="378" height="56" fill="#0a0a0c"/>
+    <rect x="396" y="150" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="397" y="151" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="396" y="150" width="3" height="56" fill="#00d9ff" opacity=".6"/>
+    <text x="408" y="170" font-size="10" fill="#00d9ff" opacity=".5">2017</text>
+    <text x="408" y="192" font-size="22" fill="#00d9ff" font-weight="700">Transformer</text>
+    <text x="570" y="170" font-size="8" fill="#00d9ff" opacity=".35">attention is all you need</text>
+    <text x="733" y="170" font-size="7" fill="#00d9ff" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- ELMo - row 4 -->
-  <rect x="384" y="200" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="384" y="200" width="178" height="1" fill="#fff"/>
-  <rect x="384" y="249" width="178" height="1" fill="#808080"/>
-  <rect x="384" y="200" width="3" height="50" fill="#00d9ff"/>
-  <text x="396" y="217" font-size="9" fill="#00d9ff" opacity=".6">2018</text>
-  <text x="396" y="234" font-size="14" fill="#00d9ff" font-weight="700">ELMo</text>
-  <text x="520" y="217" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="520" y="220" width="34" height="3" fill="#00d9ff" opacity=".4"/>
+  <!-- ROW 4 -->
+  <!-- U-Net C1 R4 red -->
+  <g class="fl">
+    <rect x="14" y="210" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="14" y="210" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="15" y="211" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="14" y="210" width="3" height="56" fill="#ff1744" opacity=".6"/>
+    <text x="26" y="230" font-size="10" fill="#ff1744" opacity=".5">2015</text>
+    <text x="26" y="252" font-size="16" fill="#ff1744" font-weight="700">U-Net</text>
+    <text x="160" y="230" font-size="7" fill="#ff1744" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- BERT - row 5 -->
-  <rect x="384" y="256" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="384" y="256" width="178" height="1" fill="#fff"/>
-  <rect x="384" y="305" width="178" height="1" fill="#808080"/>
-  <rect x="384" y="256" width="3" height="50" fill="#00d9ff"/>
-  <text x="396" y="273" font-size="9" fill="#00d9ff" opacity=".6">2019</text>
-  <text x="396" y="290" font-size="14" fill="#00d9ff" font-weight="700">BERT</text>
-  <text x="520" y="273" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="520" y="276" width="34" height="3" fill="#00d9ff" opacity=".4"/>
+  <!-- FCN C2 R4 red -->
+  <g class="fl">
+    <rect x="205" y="210" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="205" y="210" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="206" y="211" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="205" y="210" width="3" height="56" fill="#ff1744" opacity=".6"/>
+    <text x="217" y="230" font-size="10" fill="#ff1744" opacity=".5">2015</text>
+    <text x="217" y="252" font-size="16" fill="#ff1744" font-weight="700">FCN</text>
+    <text x="351" y="230" font-size="7" fill="#ff1744" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- ══ VISION (blood #ff1744) ══ -->
-  <!-- AlexNet - row 1 -->
-  <rect x="568" y="32" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="568" y="32" width="178" height="1" fill="#fff"/>
-  <rect x="568" y="81" width="178" height="1" fill="#808080"/>
-  <rect x="568" y="32" width="3" height="50" fill="#ff1744"/>
-  <text x="580" y="49" font-size="9" fill="#ff1744" opacity=".6">2012</text>
-  <text x="580" y="66" font-size="14" fill="#ff1744" font-weight="700">AlexNet</text>
-  <text x="704" y="49" font-size="7" fill="#c0c0c0" opacity=".5">NUMPY</text>
-  <rect x="704" y="52" width="34" height="3" fill="#ff1744" opacity=".4"/>
+  <!-- BERT (wide) C3-C4 R4 teal -->
+  <g class="fl">
+    <rect x="396" y="210" width="378" height="56" fill="#0a0a0c"/>
+    <rect x="396" y="210" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="397" y="211" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="396" y="210" width="3" height="56" fill="#00d9ff" opacity=".6"/>
+    <text x="408" y="230" font-size="10" fill="#00d9ff" opacity=".5">2019</text>
+    <text x="408" y="252" font-size="22" fill="#00d9ff" font-weight="700">BERT</text>
+    <text x="490" y="230" font-size="8" fill="#00d9ff" opacity=".35">MLM + NSP, 131 tests</text>
+    <text x="733" y="230" font-size="7" fill="#00d9ff" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- ResNet - row 2 -->
-  <rect x="568" y="88" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="568" y="88" width="178" height="1" fill="#fff"/>
-  <rect x="568" y="137" width="178" height="1" fill="#808080"/>
-  <rect x="568" y="88" width="3" height="50" fill="#ff1744"/>
-  <text x="580" y="105" font-size="9" fill="#ff1744" opacity=".6">2015</text>
-  <text x="580" y="122" font-size="14" fill="#ff1744" font-weight="700">ResNet</text>
-  <text x="704" y="105" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="704" y="108" width="34" height="3" fill="#ff1744" opacity=".4"/>
+  <!-- ROW 5 -->
+  <!-- AlexNet (wide) C1-C2 R5 red -->
+  <g class="fl">
+    <rect x="14" y="270" width="378" height="56" fill="#0a0a0c"/>
+    <rect x="14" y="270" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="15" y="271" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="14" y="270" width="3" height="56" fill="#ff1744" opacity=".6"/>
+    <text x="26" y="290" font-size="10" fill="#ff1744" opacity=".5">2012</text>
+    <text x="26" y="312" font-size="22" fill="#ff1744" font-weight="700">AlexNet</text>
+    <text x="170" y="290" font-size="8" fill="#ff1744" opacity=".35">the one that started it all</text>
+    <text x="351" y="290" font-size="7" fill="#ff1744" opacity=".3">NUMPY</text>
+  </g>
 
-  <!-- Faster R-CNN - row 3 -->
-  <rect x="568" y="144" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="568" y="144" width="178" height="1" fill="#fff"/>
-  <rect x="568" y="193" width="178" height="1" fill="#808080"/>
-  <rect x="568" y="144" width="3" height="50" fill="#ff1744"/>
-  <text x="580" y="161" font-size="9" fill="#ff1744" opacity=".6">2015</text>
-  <text x="580" y="178" font-size="13" fill="#ff1744" font-weight="700">Faster R-CNN</text>
-  <text x="704" y="161" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="704" y="164" width="34" height="3" fill="#ff1744" opacity=".4"/>
+  <!-- ResNet C3 R5 red -->
+  <g class="fl">
+    <rect x="396" y="270" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="396" y="270" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="397" y="271" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="396" y="270" width="3" height="56" fill="#ff1744" opacity=".6"/>
+    <text x="408" y="290" font-size="10" fill="#ff1744" opacity=".5">2015</text>
+    <text x="408" y="312" font-size="16" fill="#ff1744" font-weight="700">ResNet</text>
+    <text x="542" y="290" font-size="7" fill="#ff1744" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- FCN - row 4 -->
-  <rect x="568" y="200" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="568" y="200" width="178" height="1" fill="#fff"/>
-  <rect x="568" y="249" width="178" height="1" fill="#808080"/>
-  <rect x="568" y="200" width="3" height="50" fill="#ff1744"/>
-  <text x="580" y="217" font-size="9" fill="#ff1744" opacity=".6">2015</text>
-  <text x="580" y="234" font-size="14" fill="#ff1744" font-weight="700">FCN</text>
-  <text x="704" y="217" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="704" y="220" width="34" height="3" fill="#ff1744" opacity=".4"/>
+  <!-- Faster R-CNN C4 R5 red -->
+  <g class="fl">
+    <rect x="587" y="270" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="587" y="270" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="588" y="271" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="587" y="270" width="3" height="56" fill="#ff1744" opacity=".6"/>
+    <text x="599" y="290" font-size="10" fill="#ff1744" opacity=".5">2015</text>
+    <text x="599" y="312" font-size="12" fill="#ff1744" font-weight="700">Faster R-CNN</text>
+    <text x="733" y="290" font-size="7" fill="#ff1744" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- U-Net - row 5 -->
-  <rect x="568" y="256" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="568" y="256" width="178" height="1" fill="#fff"/>
-  <rect x="568" y="305" width="178" height="1" fill="#808080"/>
-  <rect x="568" y="256" width="3" height="50" fill="#ff1744"/>
-  <text x="580" y="273" font-size="9" fill="#ff1744" opacity=".6">2015</text>
-  <text x="580" y="290" font-size="14" fill="#ff1744" font-weight="700">U-Net</text>
-  <text x="704" y="273" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="704" y="276" width="34" height="3" fill="#ff1744" opacity=".4"/>
+  <!-- ROW 6 -->
+  <!-- ViT (wide) C1-C2 R6 red -->
+  <g class="fl">
+    <rect x="14" y="330" width="378" height="56" fill="#0a0a0c"/>
+    <rect x="14" y="330" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="15" y="331" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="14" y="330" width="3" height="56" fill="#ff1744" opacity=".6"/>
+    <text x="26" y="350" font-size="10" fill="#ff1744" opacity=".5">2021</text>
+    <text x="26" y="372" font-size="22" fill="#ff1744" font-weight="700">ViT</text>
+    <text x="80" y="350" font-size="8" fill="#ff1744" opacity=".35">an image is worth 16x16 words</text>
+    <text x="351" y="350" font-size="7" fill="#ff1744" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- MobileNetV2 - row 6 -->
-  <rect x="568" y="312" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="568" y="312" width="178" height="1" fill="#fff"/>
-  <rect x="568" y="361" width="178" height="1" fill="#808080"/>
-  <rect x="568" y="312" width="3" height="50" fill="#ff1744"/>
-  <text x="580" y="329" font-size="9" fill="#ff1744" opacity=".6">2018</text>
-  <text x="580" y="346" font-size="12" fill="#ff1744" font-weight="700">MobileNetV2</text>
-  <text x="704" y="329" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="704" y="332" width="34" height="3" fill="#ff1744" opacity=".4"/>
+  <!-- MobileNetV2 C3 R6 red -->
+  <g class="fl">
+    <rect x="396" y="330" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="396" y="330" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="397" y="331" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="396" y="330" width="3" height="56" fill="#ff1744" opacity=".6"/>
+    <text x="408" y="350" font-size="10" fill="#ff1744" opacity=".5">2018</text>
+    <text x="408" y="372" font-size="11" fill="#ff1744" font-weight="700">MobileNetV2</text>
+    <text x="542" y="350" font-size="7" fill="#ff1744" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- ViT - row 7 -->
-  <rect x="568" y="368" width="178" height="50" fill="#0d0d10" stroke="#c0c0c0" stroke-width="1"/>
-  <rect x="568" y="368" width="178" height="1" fill="#fff"/>
-  <rect x="568" y="417" width="178" height="1" fill="#808080"/>
-  <rect x="568" y="368" width="3" height="50" fill="#ff1744"/>
-  <text x="580" y="385" font-size="9" fill="#ff1744" opacity=".6">2021</text>
-  <text x="580" y="402" font-size="14" fill="#ff1744" font-weight="700">ViT</text>
-  <text x="704" y="385" font-size="7" fill="#c0c0c0" opacity=".5">TORCH</text>
-  <rect x="704" y="388" width="34" height="3" fill="#ff1744" opacity=".4"/>
+  <!-- ELMo C4 R6 teal -->
+  <g class="fl">
+    <rect x="587" y="330" width="187" height="56" fill="#0a0a0c"/>
+    <rect x="587" y="330" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
+    <rect x="588" y="331" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
+    <rect x="587" y="330" width="3" height="56" fill="#00d9ff" opacity=".6"/>
+    <text x="599" y="350" font-size="10" fill="#00d9ff" opacity=".5">2018</text>
+    <text x="599" y="372" font-size="16" fill="#00d9ff" font-weight="700">ELMo</text>
+    <text x="733" y="350" font-size="7" fill="#00d9ff" opacity=".3">TORCH</text>
+  </g>
 
-  <!-- Category labels -->
-  <rect x="16" y="428" width="178" height="16" fill="#000080"/>
-  <text x="68" y="440" font-size="9" fill="#fff" font-weight="700">CLASSICAL</text>
-  <rect x="200" y="428" width="178" height="16" fill="#000080"/>
-  <text x="248" y="440" font-size="9" fill="#fff" font-weight="700">EMBEDDINGS</text>
-  <rect x="384" y="428" width="178" height="16" fill="#000080"/>
-  <text x="422" y="440" font-size="9" fill="#fff" font-weight="700">NLP / SEQUENCE</text>
-  <rect x="568" y="428" width="178" height="16" fill="#000080"/>
-  <text x="626" y="440" font-size="9" fill="#fff" font-weight="700">VISION</text>
-
-  <!-- Status bar -->
-  <rect x="6" y="452" width="788" height="18" fill="#c0c0c0"/>
-  <rect x="6" y="452" width="788" height="1" fill="#808080"/>
-  <text x="14" y="466" font-size="9" fill="#000">19 PAPERS</text>
-  <line x1="78" y1="453" x2="78" y2="469" stroke="#808080" stroke-width="1"/>
-  <text x="84" y="466" font-size="9" fill="#000">31 YEARS</text>
-  <line x1="140" y1="453" x2="140" y2="469" stroke="#808080" stroke-width="1"/>
-  <text x="146" y="466" font-size="9" fill="#ff1744" font-weight="700">ZERO FRAMEWORKS</text>
-  <line x1="270" y1="453" x2="270" y2="469" stroke="#808080" stroke-width="1"/>
-  <text x="276" y="466" font-size="9" fill="#000">7 NUMPY</text>
-  <line x1="332" y1="453" x2="332" y2="469" stroke="#808080" stroke-width="1"/>
-  <text x="338" y="466" font-size="9" fill="#000">12 PYTORCH</text>
-  <line x1="410" y1="453" x2="410" y2="469" stroke="#808080" stroke-width="1"/>
-  <text x="416" y="466" font-size="9" fill="#000">800+ TESTS</text>
+  <!-- STATUS BAR -->
+  <rect x="8" y="392" width="784" height="18" fill="#c0c0c0"/>
+  <rect x="8" y="392" width="784" height="1" fill="#808080"/>
+  <text x="16" y="405" font-size="9" fill="#000">19 PAPERS</text>
+  <line x1="78" y1="393" x2="78" y2="409" stroke="#808080" stroke-width="1"/>
+  <text x="84" y="405" font-size="9" fill="#000">31 YEARS</text>
+  <line x1="140" y1="393" x2="140" y2="409" stroke="#808080" stroke-width="1"/>
+  <text x="146" y="405" font-size="9" fill="#ff1744" font-weight="700">ZERO FRAMEWORKS</text>
+  <line x1="274" y1="393" x2="274" y2="409" stroke="#808080" stroke-width="1"/>
+  <text x="280" y="405" font-size="9" fill="#000">7 NUMPY</text>
+  <line x1="340" y1="393" x2="340" y2="409" stroke="#808080" stroke-width="1"/>
+  <text x="346" y="405" font-size="9" fill="#000">12 TORCH</text>
+  <line x1="410" y1="393" x2="410" y2="409" stroke="#808080" stroke-width="1"/>
+  <text x="416" y="405" font-size="9" fill="#000">800+ TESTS</text>
+  <line x1="482" y1="393" x2="482" y2="409" stroke="#808080" stroke-width="1"/>
+  <g clip-path="url(#tickClip2)"><g class="tick2" font-size="9" fill="#000"><text x="490" y="405">1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ NUMPY FIRST +++ 1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ NUMPY FIRST +++ </text></g></g>
+  <circle class="led" cx="764" cy="401" r="3" fill="#008000"/>
 
   <rect class="sr" x="0" y="0" width="800" height="2" fill="#fff" opacity=".04"/>
 </svg>
