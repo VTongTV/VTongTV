@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="28" viewBox="0 0 800 28">
+  <style>
+    @keyframes wm{0%{transform:translateX(0)}100%{transform:translateX(-80px)}}
+    @keyframes p{0%,100%{opacity:.2}50%{opacity:.6}}
+    @keyframes spark{0%,90%,100%{opacity:0}92%{opacity:.8}94%{opacity:0}96%{opacity:.5}98%{opacity:0}}
+    .wm{animation:wm 2.5s linear infinite}
+    .pu{animation:p 2s ease-in-out infinite}
+    .sk{animation:spark 4s infinite}
+  </style>
+  <defs>
+    <filter id="gl"><feGaussianBlur stdDeviation="1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="sc" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="transparent"/><rect y="2" width="4" height="2" fill="#0a0a0c" opacity=".06"/></pattern>
+  </defs>
+  <rect width="800" height="28" fill="#0a0a0c"/>
+  <rect width="800" height="28" fill="url(#sc)"/>
+
+  <!-- Left line -->
+  <line x1="30" y1="14" x2="85" y2="14" stroke="#00d9ff" stroke-width=".5" opacity=".2"/>
+
+  <!-- Animated scope trace -->
+  <g class="wm" filter="url(#gl)">
+    <polyline points="85,14 95,7 105,21 115,5 125,19 135,9 145,17 155,7 165,21 175,11 185,15 195,5 205,21 215,7 225,19 235,9 245,17 255,11 265,21 275,5 285,19 295,9 305,15 315,7 325,21 335,5 345,19 355,9 365,17 375,11 385,21 395,7 405,15 415,5 425,19 435,9 445,21 455,7 465,15 475,19 485,5 495,21 505,9 515,17 525,11 535,15 545,7 555,21 565,5 575,19 585,9 595,15 605,21 615,7 625,17 635,9 645,19 655,5 665,15 675,21 685,7 695,17 705,9 715,15" fill="none" stroke="#00d9ff" stroke-width=".8" opacity=".3"/>
+    <polyline points="85,14 95,18 105,9 115,16 125,7 135,21 145,11 155,17 165,5 175,19 185,14 195,17 205,9 215,19 225,7 235,17 245,11 255,19 265,5 275,17 285,9 295,21 305,14 315,17 325,7 335,19 345,9 355,15 365,21 375,5 385,17 395,11 405,19 415,7 425,15 435,21 445,9 455,17 465,5 475,19 485,11 495,21 505,7 515,17 525,15 535,9 545,19 555,5 565,21 575,11 585,17 595,9 605,14 615,21 625,5 635,19 645,9 655,17 665,11 675,19 685,7 695,15 705,21 715,5" fill="none" stroke="#00ff88" stroke-width=".4" opacity=".12"/>
+  </g>
+
+  <!-- Right line -->
+  <line x1="715" y1="14" x2="770" y2="14" stroke="#00d9ff" stroke-width=".5" opacity=".2"/>
+
+  <!-- Center pulse dot -->
+  <circle cx="400" cy="14" r="2" fill="#00d9ff" opacity=".3" class="pu"/>
+  <circle cx="400" cy="14" r="5" fill="#00d9ff" opacity=".05" class="pu"/>
+
+  <!-- Random spark -->
+  <circle cx="250" cy="14" r="1.5" fill="#ffaa00" class="sk" opacity="0"/>
+  <circle cx="550" cy="14" r="1" fill="#ff1744" class="sk" opacity="0" style="animation-delay:2s"/>
+</svg>

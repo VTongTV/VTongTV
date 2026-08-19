@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <style>
+    @keyframes draw{from{stroke-dashoffset:2000}to{stroke-dashoffset:0}}
+    @keyframes pulse{0%,100%{r:3}50%{r:4.5}}
+    @keyframes fadein{from{opacity:0}to{opacity:1}}
+    @keyframes scanroll{0%{transform:translateY(-4px)}100%{transform:translateY(200px)}}
+    .tl{stroke-dasharray:2000;animation:draw 3s ease-out .5s both}
+    .nd{animation:pulse 3s ease-in-out infinite}
+    .fi{animation:fadein 1s ease-out 1s both}
+    .sr{animation:scanroll 5s linear infinite}
+  </style>
+  <defs>
+    <filter id="gl"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="sc" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="transparent"/><rect y="2" width="4" height="2" fill="#0a0a0c" opacity=".08"/></pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" fill="#0a0a0c" rx="4"/>
+  <rect width="800" height="200" fill="url(#sc)" rx="4"/>
+
+  <!-- Grid lines -->
+  <line x1="40" y1="30" x2="40" y2="170" stroke="#1a1a1f" stroke-width=".5"/>
+  <line x1="40" y1="170" x2="770" y2="170" stroke="#1a1a1f" stroke-width=".5"/>
+  <line x1="40" y1="100" x2="770" y2="100" stroke="#1a1a1f" stroke-width=".3" stroke-dasharray="2,4"/>
+
+  <!-- Year axis labels -->
+  <text x="70" y="185" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".2">1990</text>
+  <text x="170" y="185" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".2">2000</text>
+  <text x="270" y="185" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".2">2012</text>
+  <text x="390" y="185" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".2">2015</text>
+  <text x="510" y="185" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".2">2017</text>
+  <text x="630" y="185" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".2">2019</text>
+  <text x="730" y="185" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".2">2021</text>
+
+  <!-- Title -->
+  <text x="40" y="22" font-family="'Courier New',monospace" font-size="9" fill="#00d9ff" opacity=".4" letter-spacing="2">THE ARCHIVE ═══ 31 YEARS ═══ 19 PAPERS ═══ ZERO FRAMEWORKS</text>
+
+  <!-- Timeline trace - CLASSICAL (amber) -->
+  <g class="fi">
+    <polyline class="tl" points="70,55 100,55 130,55 160,55" fill="none" stroke="#ffaa00" stroke-width="1.5" opacity=".6" filter="url(#gl)"/>
+    <circle class="nd" cx="70" cy="55" r="3" fill="#ffaa00" opacity=".8"/>
+    <circle class="nd" cx="100" cy="55" r="3" fill="#ffaa00" opacity=".8" style="animation-delay:.5s"/>
+    <circle class="nd" cx="130" cy="55" r="3" fill="#ffaa00" opacity=".8" style="animation-delay:1s"/>
+    <circle class="nd" cx="160" cy="55" r="3" fill="#ffaa00" opacity=".8" style="animation-delay:1.5s"/>
+    <text x="70" y="46" font-family="'Courier New',monospace" font-size="7" fill="#ffaa00" opacity=".6">RNN</text>
+    <text x="100" y="46" font-family="'Courier New',monospace" font-size="7" fill="#ffaa00" opacity=".6">L5</text>
+    <text x="130" y="46" font-family="'Courier New',monospace" font-size="7" fill="#ffaa00" opacity=".6">NB</text>
+    <text x="160" y="46" font-family="'Courier New',monospace" font-size="7" fill="#ffaa00" opacity=".6">SVM</text>
+  </g>
+
+  <!-- Timeline trace - EMBEDDINGS (green) -->
+  <g class="fi">
+    <polyline class="tl" points="220,85 270,85 320,85" fill="none" stroke="#00ff88" stroke-width="1.5" opacity=".6" filter="url(#gl)" style="animation-delay:.8s"/>
+    <circle class="nd" cx="220" cy="85" r="3" fill="#00ff88" opacity=".8" style="animation-delay:2s"/>
+    <circle class="nd" cx="270" cy="85" r="3" fill="#00ff88" opacity=".8" style="animation-delay:2.5s"/>
+    <circle class="nd" cx="320" cy="85" r="3" fill="#00ff88" opacity=".8" style="animation-delay:3s"/>
+    <text x="220" y="76" font-family="'Courier New',monospace" font-size="7" fill="#00ff88" opacity=".6">LDA</text>
+    <text x="270" y="76" font-family="'Courier New',monospace" font-size="7" fill="#00ff88" opacity=".6">W2V</text>
+    <text x="320" y="76" font-family="'Courier New',monospace" font-size="7" fill="#00ff88" opacity=".6">GLOVE</text>
+  </g>
+
+  <!-- Timeline trace - NLP (teal) -->
+  <g class="fi">
+    <polyline class="tl" points="370,115 420,115 470,115 520,115 570,115" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity=".6" filter="url(#gl)" style="animation-delay:1.2s"/>
+    <circle class="nd" cx="370" cy="115" r="3" fill="#00d9ff" opacity=".8" style="animation-delay:3s"/>
+    <circle class="nd" cx="420" cy="115" r="3" fill="#00d9ff" opacity=".8" style="animation-delay:3.5s"/>
+    <circle class="nd" cx="470" cy="115" r="3" fill="#00d9ff" opacity=".8" style="animation-delay:4s"/>
+    <circle class="nd" cx="520" cy="115" r="3" fill="#00d9ff" opacity=".8" style="animation-delay:4.5s"/>
+    <circle class="nd" cx="570" cy="115" r="3" fill="#00d9ff" opacity=".8" style="animation-delay:5s"/>
+    <text x="370" y="106" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".6">S2S</text>
+    <text x="420" y="106" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".6">BAH</text>
+    <text x="467" y="106" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".6">TRS</text>
+    <text x="517" y="106" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".6">ELM</text>
+    <text x="567" y="106" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".6">BERT</text>
+  </g>
+
+  <!-- Timeline trace - VISION (blood) -->
+  <g class="fi">
+    <polyline class="tl" points="270,145 370,145 400,145 430,145 460,145 540,145 700,145" fill="none" stroke="#ff1744" stroke-width="1.5" opacity=".5" filter="url(#gl)" style="animation-delay:1.6s"/>
+    <circle class="nd" cx="270" cy="145" r="3" fill="#ff1744" opacity=".7" style="animation-delay:3.5s"/>
+    <circle class="nd" cx="370" cy="145" r="3" fill="#ff1744" opacity=".7" style="animation-delay:4s"/>
+    <circle class="nd" cx="400" cy="145" r="3" fill="#ff1744" opacity=".7" style="animation-delay:4.3s"/>
+    <circle class="nd" cx="430" cy="145" r="3" fill="#ff1744" opacity=".7" style="animation-delay:4.6s"/>
+    <circle class="nd" cx="460" cy="145" r="3" fill="#ff1744" opacity=".7" style="animation-delay:4.9s"/>
+    <circle class="nd" cx="540" cy="145" r="3" fill="#ff1744" opacity=".7" style="animation-delay:5.2s"/>
+    <circle class="nd" cx="700" cy="145" r="3" fill="#ff1744" opacity=".7" style="animation-delay:5.5s"/>
+    <text x="270" y="136" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".55">ALEX</text>
+    <text x="370" y="136" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".55">RES</text>
+    <text x="400" y="136" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".55">FRCNN</text>
+    <text x="435" y="136" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".55">FCN</text>
+    <text x="457" y="136" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".55">UNET</text>
+    <text x="530" y="136" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".55">MNET2</text>
+    <text x="693" y="136" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".55">ViT</text>
+  </g>
+
+  <!-- Band labels -->
+  <text x="755" y="57" font-family="'Courier New',monospace" font-size="7" fill="#ffaa00" opacity=".4">CLASSICAL</text>
+  <text x="755" y="87" font-family="'Courier New',monospace" font-size="7" fill="#00ff88" opacity=".4">EMBED</text>
+  <text x="755" y="117" font-family="'Courier New',monospace" font-size="7" fill="#00d9ff" opacity=".4">NLP</text>
+  <text x="755" y="147" font-family="'Courier New',monospace" font-size="7" fill="#ff1744" opacity=".4">VISION</text>
+
+  <!-- Scanline roll -->
+  <rect x="0" y="0" width="800" height="1.5" fill="#00d9ff" opacity=".03" class="sr"/>
+</svg>
