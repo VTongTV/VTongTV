@@ -89,10 +89,10 @@ rag chatbot with multi-llm routing (claude/deepseek/kimi). qwen vision for handw
 
 gdg cloud lead -- sci-tech innovation hackathon winner -- sih 2025 finalist -- 11 gcp skill badges -- aws academy graduate
 
-### recently active
+### pune right now
 
-<!-- RECENT-REPOS:START -->
-<!-- RECENT-REPOS:END -->
+<!-- PUNE-WEATHER:START -->
+<!-- PUNE-WEATHER:END -->
 
 <p align="center">
 <a href="https://github.com/VTongTV"><img src="https://img.shields.io/badge/github-VTongTV-000080?style=flat&labelColor=c0c0c0&color=000080" alt="github"></a>
