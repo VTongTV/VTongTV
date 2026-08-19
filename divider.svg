@@ -3,13 +3,13 @@
     @keyframes wm{0%{transform:translateX(0)}100%{transform:translateX(-50px)}}
     .wm{animation:wm 2s linear infinite}
   </style>
-  <rect width="800" height="14" fill="#0a0a0c"/>
-  <line x1="0" y1="0" x2="800" y2="0" stroke="#1a1a1f" stroke-width=".5"/>
-  <line x1="0" y1="13" x2="800" y2="13" stroke="#1a1a1f" stroke-width=".5"/>
+  <rect width="800" height="14" fill="#c0c0c0"/>
+  <rect width="800" height="1" fill="#fff"/>
+  <rect width="800" height="1" y="13" fill="#808080"/>
   <g class="wm">
-    <line x1="60" y1="7" x2="740" y2="7" stroke="#00d9ff" stroke-width=".5" opacity=".15" stroke-dasharray="3,6"/>
+    <line x1="100" y1="7" x2="700" y2="7" stroke="#000080" stroke-width=".5" opacity=".2" stroke-dasharray="3,6"/>
   </g>
-  <line x1="396" y1="3" x2="396" y2="11" stroke="#1a1a1f" stroke-width=".5"/>
-  <line x1="400" y1="2" x2="400" y2="12" stroke="#00d9ff" stroke-width="1" opacity=".25"/>
-  <line x1="404" y1="3" x2="404" y2="11" stroke="#1a1a1f" stroke-width=".5"/>
+  <line x1="396" y1="3" x2="396" y2="11" stroke="#808080" stroke-width=".5"/>
+  <line x1="400" y1="2" x2="400" y2="12" stroke="#000080" stroke-width="1" opacity=".4"/>
+  <line x1="404" y1="3" x2="404" y2="11" stroke="#808080" stroke-width=".5"/>
 </svg>

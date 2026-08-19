@@ -5,36 +5,39 @@ C:\vtongtv> dir /s *.py *.ts
 19 paper reimplementations found. 0 frameworks used.
 ```
 
-i rebuild landmark papers from scratch. **numpy first**, pytorch second, never sklearn. currently building multi-agent systems that argue about each other about air traffic. bengaluru-based, wilo-trained, springer-published.
+i rebuild landmark papers from scratch -- no frameworks, no shortcuts. **numpy first**, pytorch second, never sklearn. currently building multi-agent systems that argue about air traffic. bengaluru-based, wilo-trained, springer-published, patent pending.
 
-<img width="100%" src="https://ghchart.rshah.org/00d9ff/VTongTV" alt="contribution graph" />
+<img width="100%" src="https://ghchart.rshah.org/00ff88/VTongTV" alt="contribution graph" />
 
 <img width="100%" src="divider.svg">
 
 ### tech stack
 
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="28" height="28" alt="Python" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="28" height="28" alt="TypeScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="28" height="28" alt="JavaScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="28" height="28" alt="PyTorch" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="28" height="28" alt="NumPy" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" width="28" height="28" alt="FastAPI" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="28" height="28" alt="React" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="28" height="28" alt="Docker" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="28" height="28" alt="Kubernetes" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" width="28" height="28" alt="AWS" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" width="28" height="28" alt="GCP" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="28" height="28" alt="PostgreSQL" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" width="28" height="28" alt="Redis" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="28" height="28" alt="Linux" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="28" height="28" alt="Git" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="28" height="28" alt="VS Code" />
+</p>
+
 <table width="100%">
-<tr><td valign="top" width="25%">
-
-**languages**
-`python` `typescript` `javascript`
-
-</td><td valign="top" width="25%">
-
-**ML / DL**
-`pytorch` `numpy` `xgboost` `yolov8` `cupy`
-
-</td><td valign="top" width="25%">
-
-**frameworks**
-`fastapi` `react 19` `langgraph` `pydantic ai` `crewai` `sqlalchemy 2.0` `tailwindcss v4` `shadcn/ui`
-
-</td><td valign="top" width="25%">
-
-**infra / tools**
-`aws` `gcp` `vite 6` `zustand` `leaflet` `rapidocr` `git`
-
-</td></tr>
+<tr><td valign="top" width="25%"><b>ML / DL</b><br/>XGBoost, LightGBM, CatBoost, YOLOv8, SAM, TabM, HuggingFace, LangChain, LlamaIndex</td>
+<td valign="top" width="25%"><b>full-stack</b><br/>Next.js 14, Node/Express, Vite 6, TailwindCSS v4, shadcn/ui, Three.js, Leaflet, CesiumJS</td>
+<td valign="top" width="25%"><b>infra</b><br/>GKE, Helm, SQLite (WAL), n8n, Redis, Prometheus, Grafana, NSIS, Git LFS</td>
+<td valign="top" width="25%"><b>specialties</b><br/>RAG pipelines, conformal prediction, SHAP, OCR, CV inference, circuit breakers, SSE streaming</td>
+</tr>
 </table>
 
 <img width="100%" src="divider.svg">
@@ -45,20 +48,16 @@ i rebuild landmark papers from scratch. **numpy first**, pytorch second, never s
 <tr>
 <td width="50%" valign="top">
 
-**atc-guardian** -- `fastapi` `react 19` `langgraph` `pydantic ai` `crewai` `band sdk` `zustand` `leaflet`
-
-6 agents. 3 frameworks. 1 airspace. they argue about landing sequences so controllers don't have to. human-on-the-loop gate. emergency veto. regulator-ready audit export.
-
-[`live`](https://atc-guardian-frontend.vercel.app) / [`source`](https://github.com/VTongTV/ATC-Guardian) / 171 tests
+<b>atc-guardian</b> -- `langgraph` `pydantic ai` `crewai` `fastapi` `react 19` `leaflet`<br/><br/>
+6 agents across 3 frameworks. adversarial safety reviewer re-derives every advisory against ICAO separation minima. human-on-the-loop gate. emergency veto. regulator-ready audit export. 184 tests, zero-credential offline mode.<br/><br/>
+[<b>live</b>](https://atc-guardian-frontend.vercel.app) / [<b>source</b>](https://github.com/VTongTV/ATC-Guardian) / band of agents hackathon top 100
 
 </td>
 <td width="50%" valign="top">
 
-**vigil-aI** -- `react 19` `vite 6` `fastapi` `yolov8n` `rapidocr` `sqlalchemy 2.0` `tailwindcss v4`
-
-watches bengaluru traffic. catches 7 violation types. reads license plates. builds sha-256 evidence chains. fits in 4gb vram. flipkart gridlock 2.0 round 2.
-
-[`live`](https://vigil-ai-gules.vercel.app/dashboard) / [`source`](https://github.com/VTongTV/Vigil-AI) / 269 tests
+<b>vigil-aI</b> -- `yolov8n` `rapidocr` `fastapi` `react 19` `sqlalchemy 2.0` `tailwindcss v4`<br/><br/>
+7/7 traffic violation types. license plate OCR. sha-256 evidence chain. court-admissible per Indian Evidence Act s65B. VRAM-resident model serving fits 4gb. 269 tests.<br/><br/>
+[<b>live</b>](https://vigil-ai-gules.vercel.app/dashboard) / [<b>source</b>](https://github.com/VTongTV/Vigil-AI) / flipkart gridlock 2.0 round 2
 
 </td>
 </tr>
@@ -68,58 +67,55 @@ watches bengaluru traffic. catches 7 violation types. reads license plates. buil
 
 ### the archive -- 19 papers from scratch
 
-> every paper below was rebuilt from the original. no wrappers, no sklearn pipelines, no pretrained downloads. **numpy only** where it matters. pytorch where the model demands it.
+every paper rebuilt from the original. no wrappers, no sklearn, no pretrained downloads. **numpy only** where it matters. pytorch where the model demands it.
 
-<details>
-<summary>classical // 1990-1998</summary>
+<table width="100%">
+<tr>
+<td width="25%" valign="top">
 
-| year | paper | note |
-|------|-------|------|
-| 1990 | [`RNN`](https://github.com/VTongTV/RNN-from-scratch) | elman -- where it all starts. numpy only |
-| 1998 | [`LeNet-5`](https://github.com/VTongTV/LeNet-5-scratch) | lecun -- proved convolutions work. numpy only |
-| 1998 | [`Naive Bayes`](https://github.com/VTongTV/Naive-bayes-scratch) | lewis -- BIM, multinomial, 2-poisson, neg binomial |
-| 1998 | [`SVM`](https://github.com/VTongTV/SVM-From-Scratch) | joachims -- SMO, 3 kernels, VC-dimension. numpy only |
+<b>classical</b><br/>
+<br/>
+<b>1990</b> [`RNN`](https://github.com/VTongTV/RNN-from-scratch)<br/>
+<b>1998</b> [`LeNet-5`](https://github.com/VTongTV/LeNet-5-scratch)<br/>
+<b>1998</b> [`Naive Bayes`](https://github.com/VTongTV/Naive-bayes-scratch)<br/>
+<b>1998</b> [`SVM`](https://github.com/VTongTV/SVM-From-Scratch)
 
-</details>
+</td>
+<td width="25%" valign="top">
 
-<details>
-<summary>embeddings // 2003-2014</summary>
+<b>embeddings</b><br/>
+<br/>
+<b>2003</b> [`LDA`](https://github.com/VTongTV/lda-from-scratch)<br/>
+<b>2013</b> [`Word2Vec`](https://github.com/VTongTV/word2vec-from-scratch)<br/>
+<b>2014</b> [`GloVe`](https://github.com/VTongTV/glove-from-scratch)
 
-| year | paper | note |
-|------|-------|------|
-| 2003 | [`LDA`](https://github.com/VTongTV/lda-from-scratch) | blei -- variational inference, EM, newton-raphson. numpy only |
-| 2013 | [`Word2Vec`](https://github.com/VTongTV/word2vec-from-scratch) | mikolov -- CBOW + skip-gram, hierarchical softmax. numpy only |
-| 2014 | [`GloVe`](https://github.com/VTongTV/glove-from-scratch) | pennington -- co-occurrence, 71.7% analogy accuracy. numpy only |
+</td>
+<td width="25%" valign="top">
 
-</details>
+<b>nlp / sequence</b><br/>
+<br/>
+<b>2014</b> [`Seq2Seq`](https://github.com/VTongTV/seq2seq-from-scratch)<br/>
+<b>2015</b> [`Bahdanau`](https://github.com/VTongTV/bahdanau-attention-from-scratch)<br/>
+<b>2017</b> [`Transformer`](https://github.com/VTongTV/attention-from-scratch)<br/>
+<b>2018</b> [`ELMo`](https://github.com/VTongTV/elmo-from-scratch)<br/>
+<b>2019</b> [`BERT`](https://github.com/VTongTV/bert-from-scratch)
 
-<details>
-<summary>nlp / sequence // 2014-2019</summary>
+</td>
+<td width="25%" valign="top">
 
-| year | paper | note |
-|------|-------|------|
-| 2014 | [`Seq2Seq`](https://github.com/VTongTV/seq2seq-from-scratch) | sutskever -- 4-layer deep LSTM, beam search |
-| 2015 | [`Bahdanau`](https://github.com/VTongTV/bahdanau-attention-from-scratch) | bidirectional GRU, soft attention, maxout |
-| 2017 | [`Transformer`](https://github.com/VTongTV/attention-from-scratch) | vaswani -- full encoder-decoder, 217 commits |
-| 2018 | [`ELMo`](https://github.com/VTongTV/elmo-from-scratch) | peters -- biLM, char CNN, highway, 6 downstream tasks |
-| 2019 | [`BERT`](https://github.com/VTongTV/bert-from-scratch) | devlin -- BERT-B/L, MLM+NSP, 131 tests |
+<b>vision</b><br/>
+<br/>
+<b>2012</b> [`AlexNet`](https://github.com/VTongTV/AlexNet-scratch)<br/>
+<b>2015</b> [`ResNet`](https://github.com/VTongTV/Resnet-from-scratch)<br/>
+<b>2015</b> [`Faster R-CNN`](https://github.com/VTongTV/faster-rcnn-from-scratch)<br/>
+<b>2015</b> [`FCN`](https://github.com/VTongTV/FCN-from-scratch)<br/>
+<b>2015</b> [`U-Net`](https://github.com/VTongTV/U-net-from-scratch)<br/>
+<b>2018</b> [`MobileNetV2`](https://github.com/VTongTV/MobileNetV2-from-scratch)<br/>
+<b>2021</b> [`ViT`](https://github.com/VTongTV/vision-transformer-from-scratch)
 
-</details>
-
-<details>
-<summary>vision // 2012-2021</summary>
-
-| year | paper | note |
-|------|-------|------|
-| 2012 | [`AlexNet`](https://github.com/VTongTV/AlexNet-scratch) | krizhevsky -- no frameworks at all. pure numpy/cupy |
-| 2015 | [`ResNet`](https://github.com/VTongTV/Resnet-from-scratch) | he -- 18/34/50/101/152/1202, CIFAR-10 6.43% error |
-| 2015 | [`Faster R-CNN`](https://github.com/VTongTV/faster-rcnn-from-scratch) | ren -- RPN + fast R-CNN, anchor pyramid |
-| 2015 | [`FCN`](https://github.com/VTongTV/FCN-from-scratch) | long -- fully convolutional segmentation |
-| 2015 | [`U-Net`](https://github.com/VTongTV/U-net-from-scratch) | ronneberger -- valid convolutions, overlap-tile |
-| 2018 | [`MobileNetV2`](https://github.com/VTongTV/MobileNetV2-from-scratch) | sandler -- inverted residuals, linear bottlenecks |
-| 2021 | [`ViT`](https://github.com/VTongTV/vision-transformer-from-scratch) | dosovitskiy -- patch embedding, 252 tests |
-
-</details>
+</td>
+</tr>
+</table>
 
 <img width="100%" src="divider.svg">
 
@@ -127,18 +123,32 @@ watches bengaluru traffic. catches 7 violation types. reads license plates. buil
 
 | | paper | venue | year |
 |---|-------|-------|------|
-| + | dermatology ML | springer | 2025 |
-| + | AI-enhanced ERP | IEEE | 2025 |
-| + | AI in oncology | IEEE | 2025 |
+| + | [baldness detection with AI/ML](https://doi.org/10.1007/s00403-025-04477-4) | springer -- archives of dermatological research | 2026 |
+| + | [AI-enhanced ERP in higher education](https://doi.org/10.1109/ICSCDS65426.2025.11167478) | IEEE ICSCDS | 2025 |
+| + | [AI/ML in oncology: systematic review](https://doi.org/10.1109/ICSCDS65426.2025.11167501) | IEEE ICSCDS | 2025 |
+
+patent pending -- system for age-stratified androgenetic alopecia risk assessment
 
 ### experience
 
-**dscribe.ai / rebulk** -- `swe intern` -- full-stack + RAG + LLM chatbot -- AWS/GCP
+**wilo SE** -- `ml & full-stack intern` -- jan 2026 - present -- pune, in<br/>
+impeller sizing inverse model (sub-1mm MAE). tabM neural network + xgboost stacking. conformal prediction intervals. shap explainability. fastapi inference server (12 endpoints, SSE streaming). react + electron dashboard with 3d pump visualization. nsis installer. 828 commits.
 
-**wilo SE** -- `ml engineering intern` -- impeller sizing inverse model -- pytorch/XGBoost/conformal prediction
+**dscribe.ai / rebulk** -- `swe intern` -- jun 2025 - jan 2026 -- remote, ks, usa<br/>
+rag chatbot with multi-llm routing (claude/deepseek/kimi). qwen vision for handwriting ocr. segformer + depth anything v2 + 3dgs for drone stockpile volumetrics. next.js + cesiumjs dashboard. aws to gcp full-stack migration. gke deployment.
+
+### achievements
+
+[leetcode knight 1954](https://leetcode.com/u/VT2077/) -- 450+ solved -- gdg cloud lead -- sci-tech innovation hackathon winner -- sih 2025 finalist -- 11 gcp skill badges -- aws academy graduate
+
+### recently active
+
+<!-- RECENT-REPOS:START -->
+<!-- RECENT-REPOS:END -->
 
 <p align="center">
-<a href="https://github.com/VTongTV"><img src="https://img.shields.io/badge/github-VTongTV-00d9ff?style=flat&labelColor=0a0a0c&color=00d9ff" alt="github"></a>
-<a href="https://linkedin.com/in/vedant-tong"><img src="https://img.shields.io/badge/linkedin-vedant__tong-00ff88?style=flat&labelColor=0a0a0c&color=00ff88" alt="linkedin"></a>
-<a href="mailto:vedant.tong@example.com"><img src="https://img.shields.io/badge/email-contact-ffaa00?style=flat&labelColor=0a0a0c&color=ffaa00" alt="email"></a>
+<a href="https://github.com/VTongTV"><img src="https://img.shields.io/badge/github-VTongTV-000080?style=flat&labelColor=c0c0c0&color=000080" alt="github"></a>
+<a href="https://linkedin.com/in/ved-t-271941406"><img src="https://img.shields.io/badge/linkedin-vedant__tong-008080?style=flat&labelColor=c0c0c0&color=008080" alt="linkedin"></a>
+<a href="mailto:vedant.tong@yahoo.co.in"><img src="https://img.shields.io/badge/email-contact-808000?style=flat&labelColor=c0c0c0&color=808000" alt="email"></a>
+<a href="https://leetcode.com/u/VT2077/"><img src="https://img.shields.io/badge/leetcode-knight__1954-ffaa00?style=flat&labelColor=c0c0c0&color=ffaa00" alt="leetcode"></a>
 </p>
