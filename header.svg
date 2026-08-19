@@ -1,130 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="340" viewBox="0 0 800 340">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="160" viewBox="0 0 800 160">
   <style>
-    @keyframes glitch-r { 0%,88%,94%,100%{transform:translateX(2px);opacity:.1} 90%{transform:translateX(12px) skewX(-3deg);opacity:.4} 92%{transform:translateX(-8px);opacity:.25} }
-    @keyframes glitch-b { 0%,88%,94%,100%{transform:translateX(-2px);opacity:.1} 90%{transform:translateX(-12px) skewX(3deg);opacity:.4} 92%{transform:translateX(8px);opacity:.25} }
-    @keyframes glitch-m { 0%,88%,94%,100%{transform:translateX(0)} 90%{transform:translateX(-3px) skewX(-1deg)} 92%{transform:translateX(4px) skewX(.5deg)} }
-    @keyframes scanroll { 0%{transform:translateY(-4px)} 100%{transform:translateY(340px)} }
-    @keyframes cursor { 0%,49%{opacity:1} 50%,100%{opacity:0} }
-    @keyframes rec { 0%,59%{opacity:.9} 60%,100%{opacity:0} }
-    @keyframes noise { 0%{opacity:.02} 50%{opacity:.04} 100%{opacity:.02} }
-    @keyframes bar1 { from{width:0}to{width:165px} }
-    @keyframes bar2 { from{width:0}to{width:155px} }
-    @keyframes bar3 { from{width:0}to{width:50px} }
-    @keyframes bar4 { from{width:0}to{width:35px} }
-    @keyframes fadein { from{opacity:0}to{opacity:1} }
-    @keyframes flicker { 0%,100%{opacity:1} 92%{opacity:.96} 94%{opacity:1} 97%{opacity:.98} }
-    @keyframes dropout { 0%,93%,96%,100%{opacity:1} 94%,95%{opacity:0} }
-    .gr{animation:glitch-r 6s infinite}
-    .gb{animation:glitch-b 6s infinite}
-    .gm{animation:glitch-m 6s infinite}
-    .sr{animation:scanroll 5s linear infinite}
+    @keyframes cursor{0%,49%{opacity:1}50%,100%{opacity:0}}
+    @keyframes scanroll{0%{transform:translateY(-2px)}100%{transform:translateY(160px)}}
+    @keyframes blink{0%,59%{opacity:1}60%,100%{opacity:0}}
     .cb{animation:cursor .8s steps(1) infinite}
-    .rb{animation:rec 1.2s steps(1) infinite}
-    .ns{animation:noise .3s steps(2) infinite}
-    .b1{animation:bar1 1.2s ease-out 2s both}
-    .b2{animation:bar2 1.2s ease-out 2.15s both}
-    .b3{animation:bar3 1.2s ease-out 2.3s both}
-    .b4{animation:bar4 1.2s ease-out 2.45s both}
-    .fi{animation:fadein .8s ease-out 2.8s both}
-    .fl{animation:flicker 4s infinite}
-    .do{animation:dropout 8s infinite}
+    .sr{animation:scanroll 4s linear infinite}
+    .rb{animation:blink 1s steps(1) infinite}
   </style>
   <defs>
-    <radialGradient id="vig" cx="50%" cy="45%" r="72%">
-      <stop offset="0%" stop-color="transparent"/>
-      <stop offset="100%" stop-color="#0a0a0c" stop-opacity=".85"/>
-    </radialGradient>
-    <pattern id="scn" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="2" fill="transparent"/>
-      <rect y="2" width="4" height="2" fill="#000" opacity=".13"/>
+    <pattern id="sc" width="2" height="2" patternUnits="userSpaceOnUse">
+      <rect width="2" height="1" fill="transparent"/>
+      <rect y="1" width="2" height="1" fill="#000" opacity=".06"/>
     </pattern>
-    <filter id="gl"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="gs"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <clipPath id="t1"><rect x="52" y="0" width="0" height="340"><animate attributeName="width" from="0" to="720" dur="2.2s" begin="1.5s" fill="freeze"/></rect></clipPath>
-    <clipPath id="t2"><rect x="52" y="0" width="0" height="340"><animate attributeName="width" from="0" to="720" dur="1.5s" begin="3s" fill="freeze"/></rect></clipPath>
   </defs>
 
-  <!-- BG + CRT bezel -->
-  <rect width="800" height="340" fill="#0a0a0c"/>
-  <rect x="10" y="10" width="780" height="320" rx="12" fill="#060608" stroke="#1a1a1f" stroke-width="1"/>
-  <rect x="16" y="16" width="768" height="308" rx="8" fill="#0a0a0c" stroke="#111114" stroke-width=".5"/>
+  <!-- Background -->
+  <rect width="800" height="160" fill="#008080"/>
 
-  <!-- Noise layer -->
-  <rect x="16" y="16" width="768" height="308" rx="8" fill="#00d9ff" opacity=".02" class="ns"/>
+  <!-- CRT scanline overlay -->
+  <rect width="800" height="160" fill="url(#sc)"/>
 
-  <!-- Scanlines -->
-  <rect x="16" y="16" width="768" height="308" rx="8" fill="url(#scn)"/>
-  <!-- Vignette -->
-  <rect x="16" y="16" width="768" height="308" rx="8" fill="url(#vig)"/>
+  <!-- Window title bar -->
+  <rect x="12" y="8" width="776" height="144" fill="#c0c0c0" rx="0"/>
+  <!-- Title bar -->
+  <rect x="12" y="8" width="776" height="22" fill="#000080"/>
+  <!-- 3D bevel outer -->
+  <rect x="12" y="8" width="776" height="144" fill="none" stroke="#ffffff" stroke-width="1" rx="0"/>
+  <rect x="13" y="9" width="774" height="142" fill="none" stroke="#808080" stroke-width="1"/>
+  <!-- Inner bevel -->
+  <rect x="14" y="30" width="772" height="120" fill="none" stroke="#808080" stroke-width="1"/>
+  <rect x="15" y="31" width="770" height="118" fill="#008080"/>
+  <!-- Scanlines on inner area -->
+  <rect x="15" y="31" width="770" height="118" fill="url(#sc)"/>
 
-  <!-- ═══ TOP BAR ═══ -->
-  <line x1="40" y1="46" x2="760" y2="46" stroke="#1a1a1f" stroke-width=".5"/>
-  <text x="44" y="39" font-family="'Courier New',monospace" font-size="9" fill="#00d9ff" opacity=".3" letter-spacing="2">SIGNAL LOG v0.1</text>
-  <!-- REC indicator -->
-  <circle cx="722" cy="36" r="3.5" fill="#ff1744" class="rb"/>
-  <text x="730" y="39" font-family="'Courier New',monospace" font-size="9" fill="#ff1744" opacity=".6">REC</text>
-  <!-- Timecode -->
-  <text x="760" y="39" font-family="'Courier New',monospace" font-size="8" fill="#00d9ff" opacity=".15" text-anchor="end">00:00:01</text>
+  <!-- Title bar text -->
+  <text x="24" y="23" font-family="'Courier New',monospace" font-size="12" fill="#ffffff" font-weight="700">VEDANT TONG — ML/AI ENGINEER</text>
 
-  <!-- ═══ NAME with CHROMATIC ABERRATION + GLITCH ═══ -->
-  <text class="gr" x="54" y="110" font-family="'Courier New',monospace" font-size="58" font-weight="700" fill="#ff1744" letter-spacing="-1">VEDANT TONG</text>
-  <text class="gb" x="50" y="110" font-family="'Courier New',monospace" font-size="58" font-weight="700" fill="#0066ff" letter-spacing="-1">VEDANT TONG</text>
-  <text class="gm" x="52" y="110" font-family="'Courier New',monospace" font-size="58" font-weight="700" fill="#00d9ff" filter="url(#gl)" letter-spacing="-1">VEDANT TONG</text>
+  <!-- Window buttons (minimize, maximize, close) -->
+  <rect x="726" y="11" width="18" height="16" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <rect x="727" y="12" width="16" height="14" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <line x1="730" y1="22" x2="740" y2="12" stroke="#000" stroke-width="1"/>
+  <line x1="740" y1="22" x2="730" y2="12" stroke="#000" stroke-width="1"/>
+
+  <rect x="748" y="11" width="18" height="16" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <rect x="749" y="12" width="16" height="14" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <rect x="752" y="15" width="10" height="9" fill="none" stroke="#000" stroke-width="1"/>
+  <line x1="752" y1="15" x2="762" y2="15" stroke="#000" stroke-width="1"/>
+
+  <rect x="770" y="11" width="18" height="16" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <rect x="771" y="12" width="16" height="14" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <rect x="774" y="15" width="10" height="9" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+  <rect x="774" y="15" width="10" height="1" fill="#ffffff"/>
+  <rect x="774" y="15" width="1" height="9" fill="#ffffff"/>
+
+  <!-- Name - large, bold -->
+  <text x="30" y="68" font-family="'Courier New',monospace" font-size="32" fill="#ffffff" font-weight="700">VEDANT TONG</text>
 
   <!-- Subtitle -->
-  <text x="54" y="140" font-family="'Courier New',monospace" font-size="13" fill="#00d9ff" opacity=".35" letter-spacing="8">ML / AI ENGINEER</text>
+  <text x="30" y="88" font-family="'Courier New',monospace" font-size="13" fill="#ffff00" letter-spacing="3">ML / AI ENGINEER</text>
 
-  <!-- Decorative separator -->
-  <line x1="54" y1="155" x2="360" y2="155" stroke="#00d9ff" stroke-width=".5" opacity=".2"/>
-  <rect x="365" y="152" width="3" height="3" fill="#00d9ff" opacity=".15"/>
-  <line x1="374" y1="155" x2="410" y2="155" stroke="#00d9ff" stroke-width=".3" opacity=".1"/>
+  <!-- Tagline with cursor -->
+  <text x="30" y="112" font-family="'Courier New',monospace" font-size="12" fill="#ffffff" opacity=".85">C:\> rebuild landmark papers from scratch. no frameworks.</text>
+  <rect x="486" y="102" width="8" height="13" fill="#ffffff" opacity=".9" class="cb"/>
 
-  <!-- ═══ TYPING TAGLINE ═══ -->
-  <text clip-path="url(#t1)" x="54" y="178" font-family="'Courier New',monospace" font-size="12" fill="#00ff88" opacity=".8" class="do">> rebuild landmark papers from scratch. no frameworks, no shortcuts.</text>
-  <text clip-path="url(#t2)" x="54" y="198" font-family="'Courier New',monospace" font-size="12" fill="#00ff88" opacity=".6">> 19 papers across 31 years of ML history.</text>
-  <rect x="440" y="188" width="8" height="12" fill="#00ff88" opacity=".8" class="cb"/>
+  <!-- Bottom status bar -->
+  <rect x="14" y="138" width="772" height="12" fill="#c0c0c0"/>
+  <rect x="14" y="138" width="772" height="1" fill="#808080"/>
+  <text x="20" y="148" font-family="'Courier New',monospace" font-size="9" fill="#000">19 PAPERS</text>
+  <line x1="82" y1="139" x2="82" y2="149" stroke="#808080" stroke-width="1"/>
+  <text x="88" y="148" font-family="'Courier New',monospace" font-size="9" fill="#000">800+ TESTS</text>
+  <line x1="152" y1="139" x2="152" y2="149" stroke="#808080" stroke-width="1"/>
+  <text x="158" y="148" font-family="'Courier New',monospace" font-size="9" fill="#000">3 PUBLISHED</text>
+  <line x1="240" y1="139" x2="240" y2="149" stroke="#808080" stroke-width="1"/>
+  <text x="246" y="148" font-family="'Courier New',monospace" font-size="9" fill="#000">2 DEPLOYED</text>
 
-  <!-- ═══ STATS BARS ═══ -->
-  <g class="fi">
-    <!-- Papers bar -->
-    <text x="54" y="234" font-family="'Courier New',monospace" font-size="9" fill="#00d9ff" opacity=".45">PAPERS</text>
-    <rect x="110" y="226" width="180" height="10" fill="#111114" rx="1"/>
-    <rect class="b1" x="110" y="226" width="0" height="10" fill="#00d9ff" opacity=".5" rx="1"/>
-    <text x="300" y="235" font-family="'Courier New',monospace" font-size="9" fill="#00d9ff" opacity=".7">19</text>
+  <!-- REC indicator in status bar -->
+  <circle cx="750" cy="144" r="3" fill="#ff0000" class="rb"/>
+  <text x="758" y="148" font-family="'Courier New',monospace" font-size="9" fill="#000">LIVE</text>
 
-    <!-- Tests bar -->
-    <text x="54" y="252" font-family="'Courier New',monospace" font-size="9" fill="#00ff88" opacity=".45">TESTS_</text>
-    <rect x="110" y="244" width="180" height="10" fill="#111114" rx="1"/>
-    <rect class="b2" x="110" y="244" width="0" height="10" fill="#00ff88" opacity=".5" rx="1"/>
-    <text x="300" y="253" font-family="'Courier New',monospace" font-size="9" fill="#00ff88" opacity=".7">800+</text>
-
-    <!-- Pubs bar -->
-    <text x="54" y="270" font-family="'Courier New',monospace" font-size="9" fill="#ffaa00" opacity=".45">PUBS___</text>
-    <rect x="110" y="262" width="180" height="10" fill="#111114" rx="1"/>
-    <rect class="b3" x="110" y="262" width="0" height="10" fill="#ffaa00" opacity=".45" rx="1"/>
-    <text x="300" y="271" font-family="'Courier New',monospace" font-size="9" fill="#ffaa00" opacity=".7">3</text>
-
-    <!-- Systems bar -->
-    <text x="54" y="288" font-family="'Courier New',monospace" font-size="9" fill="#00d9ff" opacity=".45">SYSTEMS</text>
-    <rect x="110" y="280" width="180" height="10" fill="#111114" rx="1"/>
-    <rect class="b4" x="110" y="280" width="0" height="10" fill="#00d9ff" opacity=".35" rx="1"/>
-    <text x="300" y="289" font-family="'Courier New',monospace" font-size="9" fill="#00d9ff" opacity=".7">2</text>
-  </g>
-
-  <!-- ═══ RIGHT SIDE - SCOPE TRACE ═══ -->
-  <g class="fi">
-    <polyline points="490,235 510,228 525,242 538,222 550,238 565,218 578,236 590,224 605,234 618,216 632,230 645,214 658,226 672,240 685,220 698,232 712,228 728,236 742,224" fill="none" stroke="#00d9ff" stroke-width="1" opacity=".3" filter="url(#gs)"/>
-    <polyline points="490,260 510,256 525,266 538,252 550,264 565,248 578,260 590,254 605,262 618,248 632,258 645,250 658,260 672,268 685,254 698,262 712,256 728,264 742,258" fill="none" stroke="#00ff88" stroke-width=".6" opacity=".15"/>
-    <text x="490" y="298" font-family="'Courier New',monospace" font-size="8" fill="#ffaa00" opacity=".3">FREQ:2.4GHz SIG:████▒░░░ NOISE:3dB</text>
-  </g>
-
-  <!-- ═══ BOTTOM CORNER INFO ═══ -->
-  <text x="44" y="310" font-family="'Courier New',monospace" font-size="8" fill="#00d9ff" opacity=".15">█▓▒░ BENGALURU.IN</text>
-  <text x="760" y="310" font-family="'Courier New',monospace" font-size="8" fill="#00d9ff" opacity=".15" text-anchor="end">SPRINGER·IEEE·WILO</text>
-
-  <!-- ═══ MOVING SCANLINE ═══ -->
-  <rect x="16" y="0" width="768" height="2" fill="#00d9ff" opacity=".035" rx="1" class="sr"/>
-
-  <!-- Flicker overlay -->
-  <rect x="16" y="16" width="768" height="308" rx="8" fill="transparent" opacity="0" class="fl"/>
+  <!-- Scanline roll -->
+  <rect x="15" y="0" width="770" height="1.5" fill="#ffffff" opacity=".03" class="sr"/>
 </svg>
