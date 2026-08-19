@@ -1,11 +1,169 @@
 import os
 import re
+import json
 import requests
+from datetime import datetime, date
 
 USERNAME = "VTongTV"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 WEATHER_API_KEY = os.environ.get("OPENWEATHER_API_KEY", "")
 README_PATH = "README.md"
+CONTRIB_PATH = "contributions.svg"
+
+DARK_BG = "#0d1117"
+DARK_CELL_EMPTY = "#161b22"
+DARK_CELL_LEVELS = ["#0e4429", "#006d32", "#26a641", "#39d353"]
+CELL_SIZE = 11
+CELL_GAP = 3
+CELL_STEP = CELL_SIZE + CELL_GAP
+LEFT_MARGIN = 36
+TOP_MARGIN = 20
+MONTH_LABELS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+DAY_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""]
+
+def fetch_contributions(year):
+    if not TOKEN:
+        return None
+    query = """
+    query($login: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $login) {
+        contributionsCollection(from: $from, to: $to) {
+          contributionCalendar {
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+                color
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+    variables = {
+        "login": USERNAME,
+        "from": f"{year}-01-01T00:00:00Z",
+        "to": f"{year}-12-31T23:59:59Z" if year < datetime.now().year else f"{datetime.now().isoformat()}Z",
+    }
+    try:
+        r = requests.post(
+            "https://api.github.com/graphql",
+            json={"query": query, "variables": variables},
+            headers={"Authorization": f"bearer {TOKEN}"},
+            timeout=30,
+        )
+        if r.status_code != 200:
+            return None
+        data = r.json()
+        weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+        result = []
+        for w in weeks:
+            for d in w["contributionDays"]:
+                result.append({
+                    "date": d["date"],
+                    "count": d["contributionCount"],
+                    "color": d.get("color", DARK_CELL_EMPTY),
+                })
+        return result
+    except Exception as e:
+        print(f"Error fetching {year}: {e}")
+        return None
+
+def get_level(count):
+    if count == 0:
+        return 0
+    elif count <= 3:
+        return 1
+    elif count <= 6:
+        return 2
+    elif count <= 9:
+        return 3
+    else:
+        return 4
+
+def render_year_svg(days_data, year, y_offset):
+    if not days_data:
+        return ""
+    first_date = date.fromisoformat(days_data[0]["date"])
+    first_day_offset = first_date.weekday()
+    start_date = date(year, 1, 1)
+    start_weekday = start_date.weekday()
+
+    rects = []
+    month_positions = {}
+    current_month = -1
+    col = 0
+    row = 0
+
+    for d in days_data:
+        dt = date.fromisoformat(d["date"])
+        if dt.year != year:
+            continue
+        day_of_year = (dt - date(year, 1, 1)).days
+        col = day_of_year // 7
+        row = (start_weekday + day_of_year) % 7
+        if row >= 7:
+            continue
+        level = get_level(d["count"])
+        color = DARK_CELL_LEVELS[level - 1] if level > 0 else DARK_CELL_EMPTY
+        x = LEFT_MARGIN + col * CELL_STEP
+        y = y_offset + TOP_MARGIN + row * CELL_STEP
+        rects.append(f'<rect x="{x}" y="{y}" width="{CELL_SIZE}" height="{CELL_SIZE}" rx="2" ry="2" fill="{color}"/>')
+
+        month = dt.month
+        if month != current_month:
+            month_positions[month] = x
+            current_month = month
+
+    month_labels = []
+    for m, mx in month_positions.items():
+        month_labels.append(f'<text x="{mx}" y="{y_offset + 13}" font-size="10" fill="#8b949e" font-family="Helvetica,Arial,sans-serif">{MONTH_LABELS[m-1]}</text>')
+
+    day_labels = []
+    for row_idx in [1, 3, 5]:
+        day_labels.append(f'<text x="2" y="{y_offset + TOP_MARGIN + row_idx * CELL_STEP + 9}" font-size="9" fill="#8b949e" font-family="Helvetica,Arial,sans-serif">{DAY_LABELS[row_idx]}</text>')
+
+    year_label = f'<text x="{LEFT_MARGIN}" y="{y_offset + TOP_MARGIN + 7 * CELL_STEP + 14}" font-size="11" fill="#8b949e" font-family="Helvetica,Arial,sans-serif">{year}</text>'
+
+    total_cols = max(col + 1, 53)
+    width = LEFT_MARGIN + total_cols * CELL_STEP
+
+    return "\n".join(month_labels + day_labels + rects + [year_label])
+
+def generate_contributions_svg():
+    years = list(range(2024, datetime.now().year + 1))
+    years.reverse()
+    all_data = {}
+    for y in years:
+        data = fetch_contributions(y)
+        if data:
+            all_data[y] = data
+
+    if not all_data:
+        return
+
+    total_cols = 53
+    svg_width = LEFT_MARGIN + total_cols * CELL_STEP + 10
+    year_height = TOP_MARGIN + 7 * CELL_STEP + 20
+    svg_height = len(all_data) * year_height + 10
+
+    parts = []
+    parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{svg_width}" height="{svg_height}" viewBox="0 0 {svg_width} {svg_height}">')
+    parts.append(f'<rect width="{svg_width}" height="{svg_height}" fill="{DARK_BG}" rx="6"/>')
+    parts.append('<style>text{font-family:Helvetica,Arial,sans-serif}</style>')
+
+    y_off = 0
+    for y in years:
+        if y in all_data:
+            parts.append(render_year_svg(all_data[y], y, y_off))
+            y_off += year_height
+
+    parts.append('</svg>')
+
+    with open(CONTRIB_PATH, "w", encoding="utf-8") as f:
+        f.write("\n".join(parts))
+    print(f"Generated {CONTRIB_PATH}")
 
 def fetch_pune_weather():
     if not WEATHER_API_KEY:
@@ -23,13 +181,7 @@ def fetch_pune_weather():
         feels = round(data["main"]["feels_like"])
         humidity = data["main"]["humidity"]
         desc = data["weather"][0]["main"].lower()
-        icon_map = {
-            "clear": "sun", "clouds": "cloud", "rain": "rain",
-            "drizzle": "rain", "thunderstorm": "storm", "mist": "fog",
-            "fog": "fog", "haze": "fog", "smoke": "fog",
-        }
-        icon = icon_map.get(desc.split()[0] if " " in desc else desc, "cloud")
-        return {"temp": temp, "feels": feels, "humidity": humidity, "desc": desc, "icon": icon}
+        return {"temp": temp, "feels": feels, "humidity": humidity, "desc": desc}
     except Exception:
         return None
 
@@ -47,9 +199,8 @@ def fetch_pune_aqi():
         data = r.json()
         aqi_val = data["list"][0]["main"]["aqi"]
         aqi_labels = {1: "good", 2: "fair", 3: "moderate", 4: "poor", 5: "hazardous"}
-        aqi_colors = {1: "#00ff88", 2: "#aaff00", 3: "#ffaa00", 4: "#ff4444", 5: "#ff0000"}
         pm25 = round(data["list"][0]["components"]["pm2_5"], 1)
-        return {"aqi": aqi_val, "label": aqi_labels.get(aqi_val, "unknown"), "color": aqi_colors.get(aqi_val, "#808080"), "pm25": pm25}
+        return {"aqi": aqi_val, "label": aqi_labels.get(aqi_val, "unknown"), "pm25": pm25}
     except Exception:
         return None
 
@@ -72,6 +223,8 @@ def replace_section(content, start_marker, end_marker, new_body):
     return pattern.sub(replacement, content)
 
 def main():
+    generate_contributions_svg()
+
     weather = fetch_pune_weather()
     aqi = fetch_pune_aqi()
     block = build_weather_block(weather, aqi)
