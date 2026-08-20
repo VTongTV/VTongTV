@@ -92,6 +92,7 @@ gdg cloud lead -- sci-tech innovation hackathon winner -- sih 2025 finalist -- 1
 ### pune right now
 
 <!-- PUNE-WEATHER:START -->
+<!-- weather data unavailable -->
 <!-- PUNE-WEATHER:END -->
 
 <p align="center">
