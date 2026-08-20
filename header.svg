@@ -111,7 +111,7 @@
       <text class="p2" x="105" y="86" font-size="13" fill="#ffffff">[2003] LDA  [2012] AlexNet  [2013] Word2Vec</text>
       <text class="p3" x="105" y="86" font-size="13" fill="#ffffff">[2014] Seq2Seq  [2015] ResNet  [2015] U-Net</text>
       <text class="p4" x="105" y="86" font-size="13" fill="#ffffff">[2017] Transformer  [2018] ELMo  [2019] BERT</text>
-      <text class="p5" x="105" y="86" font-size="13" fill="#ffff00">[2021] ViT -- 19/19 COMPLETE. NO FRAMEWORKS.</text>
+      <text class="p5" x="105" y="86" font-size="13" fill="#ffff00">[2021] ViT -- 23/23 COMPLETE. NO FRAMEWORKS.</text>
       <line x1="40" y1="120" x2="760" y2="120" stroke="#00ff88" stroke-width="1" opacity=".4"/>
       <g fill="#00ff88">
         <rect class="tk1" x="150" y="116" width="2" height="8"/>
@@ -176,7 +176,7 @@
       <g class="tray">
         <rect x="14" y="138" width="772" height="12" fill="#c0c0c0"/>
         <rect x="14" y="138" width="772" height="1" fill="#808080"/>
-        <g class="s1"><g clip-path="url(#tickClip)"><g class="tick" font-size="9" fill="#000"><text x="20" y="148">19 PAPERS +++ 800+ TESTS +++ 3 PUBLISHED +++ LC 1954 KNIGHT +++ 1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ 19 PAPERS +++ 800+ TESTS +++ 3 PUBLISHED +++ LC 1954 KNIGHT +++ 1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ </text></g></g></g>
+        <g class="s1"><g clip-path="url(#tickClip)"><g class="tick" font-size="9" fill="#000"><text x="20" y="148">23 PAPERS +++ 800+ TESTS +++ 3 PUBLISHED +++ LC 1954 KNIGHT +++ 1990 RNN +++ 1997 LSTM +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2014 TextCNN +++ 2014 VGG +++ 2014 Inception +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ 23 PAPERS +++ 800+ TESTS +++ 3 PUBLISHED +++ LC 1954 KNIGHT +++ 1990 RNN +++ 1997 LSTM +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2014 TextCNN +++ 2014 VGG +++ 2014 Inception +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ </text></g></g></g>
         <circle class="led" cx="716" cy="144" r="2.5" fill="#008000"/>
         <circle cx="750" cy="144" r="3" fill="#ff0000" class="rb"/>
         <text x="758" y="148" font-size="9" fill="#000">LIVE</text>

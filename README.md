@@ -1,6 +1,6 @@
 <img width="100%" src="header.svg">
 
-ml & full-stack intern @ wilo SE (pune). previously built rag chatbots + drone cv pipelines @ dscribe.ai (remote, usa). shipped 2 deployed ai systems -- air traffic control multi-agent platform and pune traffic violation detector. 3 publications (springer + 2x IEEE). patent pending. 19 landmark ml papers rebuilt from scratch, 800+ tests written. [leetcode knight 1954](https://leetcode.com/u/VT2077/).
+ml & full-stack intern @ wilo SE (pune). previously built rag chatbots + drone cv pipelines @ dscribe.ai (remote, usa). shipped 2 deployed ai systems -- air traffic control multi-agent platform and pune traffic violation detector. 3 publications (springer + 2x IEEE). patent pending. 23 landmark ml papers rebuilt from scratch, 800+ tests written. [leetcode knight 1954](https://leetcode.com/u/VT2077/).
 
 <img width="100%" src="contributions.svg" alt="contribution graph" />
 
@@ -61,7 +61,7 @@ ml & full-stack intern @ wilo SE (pune). previously built rag chatbots + drone c
 
 <img width="100%" src="divider.svg">
 
-### the archive -- 19 papers from scratch
+### the archive -- 23 papers from scratch
 
 <img width="100%" src="archive.svg" />
 
