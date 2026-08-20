@@ -76,7 +76,7 @@
     @keyframes hum{0%,100%{opacity:.9}50%{opacity:.7}}
     .hum{animation:hum 3s ease-in-out 8s infinite}
     @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-2800px)}}
-    .tick{animation:tick 40s linear 8s infinite}
+    .tick{animation:tick 80s linear 8s infinite}
     @keyframes led{0%,100%{opacity:1}50%{opacity:.3}}
     .led{animation:led 1.4s ease-in-out 8s infinite}
   </style>
@@ -90,7 +90,7 @@
     <filter id="nz2"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11"/>
       <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .1 0"/></filter>
     <clipPath id="yrClip"><rect x="0" y="0" width="60" height="16"/></clipPath>
-    <clipPath id="tickClip"><rect x="355" y="139" width="360" height="11"/></clipPath>
+    <clipPath id="tickClip"><rect x="14" y="139" width="700" height="11"/></clipPath>
   </defs>
   <rect width="800" height="160" fill="#000"/>
   <g class="crt">
@@ -176,11 +176,7 @@
       <g class="tray">
         <rect x="14" y="138" width="772" height="12" fill="#c0c0c0"/>
         <rect x="14" y="138" width="772" height="1" fill="#808080"/>
-        <g class="s1"><text x="20" y="148" font-size="9" fill="#000">19 PAPERS</text><line x1="82" y1="139" x2="82" y2="149" stroke="#808080" stroke-width="1"/></g>
-        <g class="s2"><text x="88" y="148" font-size="9" fill="#000">800+ TESTS</text><line x1="152" y1="139" x2="152" y2="149" stroke="#808080" stroke-width="1"/></g>
-        <g class="s3"><text x="158" y="148" font-size="9" fill="#000">3 PUBLISHED</text><line x1="240" y1="139" x2="240" y2="149" stroke="#808080" stroke-width="1"/></g>
-        <g class="s4"><text x="246" y="148" font-size="9" fill="#000">LC 1954 KNIGHT</text><line x1="355" y1="139" x2="355" y2="149" stroke="#808080" stroke-width="1"/></g>
-        <g class="s5"><g clip-path="url(#tickClip)"><g class="tick" font-size="9" fill="#000"><text x="368" y="148">1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ 1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ </text></g></g></g>
+        <g class="s1"><g clip-path="url(#tickClip)"><g class="tick" font-size="9" fill="#000"><text x="20" y="148">19 PAPERS +++ 800+ TESTS +++ 3 PUBLISHED +++ LC 1954 KNIGHT +++ 1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ 19 PAPERS +++ 800+ TESTS +++ 3 PUBLISHED +++ LC 1954 KNIGHT +++ 1990 RNN +++ 1998 LeNet-5 +++ 1998 Naive Bayes +++ 1998 SVM +++ 2003 LDA +++ 2012 AlexNet +++ 2013 Word2Vec +++ 2014 GloVe +++ 2014 Seq2Seq +++ 2015 Bahdanau +++ 2015 ResNet +++ 2015 Faster R-CNN +++ 2015 FCN +++ 2015 U-Net +++ 2017 Transformer +++ 2018 ELMo +++ 2018 MobileNetV2 +++ 2019 BERT +++ 2021 ViT +++ PATENT PENDING +++ ATC-GUARDIAN +++ VIGIL-AI +++ NUMPY FIRST +++ </text></g></g></g>
         <circle class="led" cx="716" cy="144" r="2.5" fill="#008000"/>
         <circle cx="750" cy="144" r="3" fill="#ff0000" class="rb"/>
         <text x="758" y="148" font-size="9" fill="#000">LIVE</text>
