@@ -1,20 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="454" viewBox="0 0 800 454">
   <style>
     text{font-family:'Courier New',monospace}
-    @keyframes led{0%,100%{opacity:1}50%{opacity:.4}}
-    .led{animation:led 1.4s ease-in-out infinite}
+    @keyframes tileIn{0%{opacity:0;transform:translateY(7px)}100%{opacity:1;transform:translateY(0)}}
+    @keyframes barPulse{0%,100%{opacity:1}50%{opacity:.45}}
+    @keyframes scanroll{0%{transform:translateY(-2px)}100%{transform:translateY(454px)}}
+    @keyframes titleGlow{0%,100%{opacity:1}50%{opacity:.75}}
+    .ti{animation:tileIn .52s cubic-bezier(.2,.8,.2,1) both}
+    .r1{animation-delay:.03s}.r2{animation-delay:.11s}.r3{animation-delay:.19s}.r4{animation-delay:.27s}.r5{animation-delay:.35s}.r6{animation-delay:.43s}.r7{animation-delay:.51s}
+    .bar{animation:barPulse 2.6s ease-in-out infinite}
+    .b1{animation-delay:0s}.b2{animation-delay:.35s}.b3{animation-delay:.7s}.b4{animation-delay:1.05s}
+    .sr{animation:scanroll 4s linear infinite}
+    .tg{animation:titleGlow 3s ease-in-out infinite}
+    .ti{transition:filter .18s}
+    .ti:hover{filter:brightness(1.06) drop-shadow(0 2px 6px rgba(0,0,0,.12))}
   </style>
   <defs>
   </defs>
 
-  <rect width="800" height="480" fill="#008080"/>
+  <rect width="800" height="454" fill="#008080"/>
 
   <rect x="6" y="4" width="788" height="446" fill="#c0c0c0"/>
   <rect x="6" y="4" width="788" height="446" fill="none" stroke="#fff" stroke-width="2"/>
   <rect x="8" y="6" width="784" height="442" fill="none" stroke="#808080" stroke-width="1"/>
 
   <rect x="8" y="6" width="784" height="20" fill="#000080"/>
-  <text x="18" y="20" font-size="11" fill="#fff" font-weight="700">THE ARCHIVE -- 23 PAPERS FROM SCRATCH</text>
+  <text x="18" y="20" font-size="11" fill="#fff" font-weight="700" class="tg">THE ARCHIVE -- 23 PAPERS FROM SCRATCH</text>
   <rect x="724" y="8" width="16" height="16" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
   <rect x="725" y="9" width="14" height="14" fill="none" stroke="#fff" stroke-width="1"/>
   <line x1="728" y1="19" x2="736" y2="13" stroke="#000" stroke-width="1.5"/>
@@ -25,164 +35,136 @@
   <rect x="765" y="9" width="14" height="14" fill="none" stroke="#fff" stroke-width="1"/>
   <line x1="768" y1="16" x2="776" y2="16" stroke="#000" stroke-width="1.5"/>
 
-  <!-- BENTO GRID: 4 cols, gap=4 -->
-  <!-- Cols: 14, 205, 396, 587 | Width: 187 | Wide: 378 -->
-  <!-- Rows: 30, 90, 150, 210, 270, 330, 390 | Height: 56 | Tall: 116 -->
-
   <!-- ROW 1 -->
-  <!-- RNN (tall) C1 R1-R2 amber -->
-  <g>
+  <g class="ti r1">
     <rect x="14" y="30" width="187" height="116" fill="#ffffff"/>
     <rect x="14" y="30" width="187" height="116" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="15" y="31" width="185" height="114" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="14" y="30" width="3" height="116" fill="#cc8800"/>
+    <rect x="14" y="30" width="3" height="116" fill="#cc8800" class="bar b1"/>
     <text x="26" y="52" font-size="10" fill="#999">1990</text>
     <text x="26" y="76" font-size="22" fill="#cc8800" font-weight="700">RNN</text>
     <text x="26" y="98" font-size="8" fill="#666">elman -- where it all starts</text>
     <text x="160" y="52" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- LeNet-5 C2 R1 amber -->
-  <g>
+  <g class="ti r1">
     <rect x="205" y="30" width="187" height="56" fill="#ffffff"/>
     <rect x="205" y="30" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="206" y="31" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="205" y="30" width="3" height="56" fill="#cc8800"/>
+    <rect x="205" y="30" width="3" height="56" fill="#cc8800" class="bar b1"/>
     <text x="217" y="50" font-size="10" fill="#999">1998</text>
     <text x="217" y="72" font-size="16" fill="#cc8800" font-weight="700">LeNet-5</text>
     <text x="351" y="50" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- LDA C3 R1 green -->
-  <g>
+  <g class="ti r1">
     <rect x="396" y="30" width="187" height="56" fill="#ffffff"/>
     <rect x="396" y="30" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="397" y="31" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="396" y="30" width="3" height="56" fill="#00875a"/>
+    <rect x="396" y="30" width="3" height="56" fill="#00875a" class="bar b2"/>
     <text x="408" y="50" font-size="10" fill="#999">2003</text>
     <text x="408" y="72" font-size="16" fill="#00875a" font-weight="700">LDA</text>
     <text x="542" y="50" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- Seq2Seq C4 R1 teal -->
-  <g>
+  <g class="ti r1">
     <rect x="587" y="30" width="187" height="56" fill="#ffffff"/>
     <rect x="587" y="30" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="588" y="31" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="587" y="30" width="3" height="56" fill="#007799"/>
+    <rect x="587" y="30" width="3" height="56" fill="#007799" class="bar b3"/>
     <text x="599" y="50" font-size="10" fill="#999">2014</text>
     <text x="599" y="72" font-size="16" fill="#007799" font-weight="700">Seq2Seq</text>
     <text x="733" y="50" font-size="7" fill="#999">TORCH</text>
   </g>
 
   <!-- ROW 2 -->
-  <!-- Naive Bayes C2 R2 amber -->
-  <g>
+  <g class="ti r2">
     <rect x="205" y="90" width="187" height="56" fill="#ffffff"/>
     <rect x="205" y="90" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="206" y="91" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="205" y="90" width="3" height="56" fill="#cc8800"/>
+    <rect x="205" y="90" width="3" height="56" fill="#cc8800" class="bar b1"/>
     <text x="217" y="110" font-size="10" fill="#999">1998</text>
     <text x="217" y="132" font-size="14" fill="#cc8800" font-weight="700">Naive Bayes</text>
     <text x="351" y="110" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- Word2Vec C3 R2 green -->
-  <g>
+  <g class="ti r2">
     <rect x="396" y="90" width="187" height="56" fill="#ffffff"/>
     <rect x="396" y="90" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="397" y="91" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="396" y="90" width="3" height="56" fill="#00875a"/>
+    <rect x="396" y="90" width="3" height="56" fill="#00875a" class="bar b2"/>
     <text x="408" y="110" font-size="10" fill="#999">2013</text>
     <text x="408" y="132" font-size="14" fill="#00875a" font-weight="700">Word2Vec</text>
     <text x="542" y="110" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- Bahdanau C4 R2 teal -->
-  <g>
+  <g class="ti r2">
     <rect x="587" y="90" width="187" height="56" fill="#ffffff"/>
     <rect x="587" y="90" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="588" y="91" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="587" y="90" width="3" height="56" fill="#007799"/>
+    <rect x="587" y="90" width="3" height="56" fill="#007799" class="bar b3"/>
     <text x="599" y="110" font-size="10" fill="#999">2015</text>
     <text x="599" y="132" font-size="14" fill="#007799" font-weight="700">Bahdanau</text>
     <text x="733" y="110" font-size="7" fill="#999">TORCH</text>
   </g>
 
   <!-- ROW 3 -->
-  <!-- SVM C1 R3 amber -->
-  <g>
+  <g class="ti r3">
     <rect x="14" y="150" width="187" height="56" fill="#ffffff"/>
     <rect x="14" y="150" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="15" y="151" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="14" y="150" width="3" height="56" fill="#cc8800"/>
+    <rect x="14" y="150" width="3" height="56" fill="#cc8800" class="bar b1"/>
     <text x="26" y="170" font-size="10" fill="#999">1998</text>
     <text x="26" y="192" font-size="16" fill="#cc8800" font-weight="700">SVM</text>
     <text x="160" y="170" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- GloVe C2 R3 green -->
-  <g>
+  <g class="ti r3">
     <rect x="205" y="150" width="187" height="56" fill="#ffffff"/>
     <rect x="205" y="150" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="206" y="151" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="205" y="150" width="3" height="56" fill="#00875a"/>
+    <rect x="205" y="150" width="3" height="56" fill="#00875a" class="bar b2"/>
     <text x="217" y="170" font-size="10" fill="#999">2014</text>
     <text x="217" y="192" font-size="16" fill="#00875a" font-weight="700">GloVe</text>
     <text x="351" y="170" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- LSTM C3 R3 teal -->
-  <g>
+  <g class="ti r3">
     <rect x="396" y="150" width="187" height="56" fill="#ffffff"/>
     <rect x="396" y="150" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="397" y="151" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="396" y="150" width="3" height="56" fill="#007799"/>
+    <rect x="396" y="150" width="3" height="56" fill="#007799" class="bar b3"/>
     <text x="408" y="170" font-size="10" fill="#999">1997</text>
     <text x="408" y="192" font-size="16" fill="#007799" font-weight="700">LSTM</text>
     <text x="542" y="170" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- TextCNN C4 R3 teal -->
-  <g>
+  <g class="ti r3">
     <rect x="587" y="150" width="187" height="56" fill="#ffffff"/>
     <rect x="587" y="150" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="588" y="151" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="587" y="150" width="3" height="56" fill="#007799"/>
+    <rect x="587" y="150" width="3" height="56" fill="#007799" class="bar b3"/>
     <text x="599" y="170" font-size="10" fill="#999">2014</text>
     <text x="599" y="192" font-size="16" fill="#007799" font-weight="700">TextCNN</text>
     <text x="733" y="170" font-size="7" fill="#999">TORCH</text>
   </g>
 
   <!-- ROW 4 -->
-  <!-- U-Net C1 R4 red -->
-  <g>
+  <g class="ti r4">
     <rect x="14" y="210" width="187" height="56" fill="#ffffff"/>
     <rect x="14" y="210" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="15" y="211" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="14" y="210" width="3" height="56" fill="#cc0033"/>
+    <rect x="14" y="210" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="26" y="230" font-size="10" fill="#999">2015</text>
     <text x="26" y="252" font-size="16" fill="#cc0033" font-weight="700">U-Net</text>
     <text x="160" y="230" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- FCN C2 R4 red -->
-  <g>
+  <g class="ti r4">
     <rect x="205" y="210" width="187" height="56" fill="#ffffff"/>
     <rect x="205" y="210" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="206" y="211" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="205" y="210" width="3" height="56" fill="#cc0033"/>
+    <rect x="205" y="210" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="217" y="230" font-size="10" fill="#999">2015</text>
     <text x="217" y="252" font-size="16" fill="#cc0033" font-weight="700">FCN</text>
     <text x="351" y="230" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- Transformer (wide) C3-C4 R4 teal -->
-  <g>
+  <g class="ti r4">
     <rect x="396" y="210" width="378" height="56" fill="#ffffff"/>
     <rect x="396" y="210" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="397" y="211" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="396" y="210" width="3" height="56" fill="#007799"/>
+    <rect x="396" y="210" width="3" height="56" fill="#007799" class="bar b3"/>
     <text x="408" y="230" font-size="10" fill="#999">2017</text>
     <text x="408" y="252" font-size="22" fill="#007799" font-weight="700">Transformer</text>
     <text x="570" y="230" font-size="8" fill="#666">attention is all you need</text>
@@ -190,69 +172,59 @@
   </g>
 
   <!-- ROW 5 -->
-  <!-- AlexNet (wide) C1-C2 R5 red -->
-  <g>
+  <g class="ti r5">
     <rect x="14" y="270" width="378" height="56" fill="#ffffff"/>
     <rect x="14" y="270" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="15" y="271" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="14" y="270" width="3" height="56" fill="#cc0033"/>
+    <rect x="14" y="270" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="26" y="290" font-size="10" fill="#999">2012</text>
     <text x="26" y="312" font-size="22" fill="#cc0033" font-weight="700">AlexNet</text>
     <text x="170" y="290" font-size="8" fill="#666">the one that started it all</text>
     <text x="351" y="290" font-size="7" fill="#999">NUMPY</text>
   </g>
-
-  <!-- ResNet C3 R5 red -->
-  <g>
+  <g class="ti r5">
     <rect x="396" y="270" width="187" height="56" fill="#ffffff"/>
     <rect x="396" y="270" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="397" y="271" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="396" y="270" width="3" height="56" fill="#cc0033"/>
+    <rect x="396" y="270" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="408" y="290" font-size="10" fill="#999">2015</text>
     <text x="408" y="312" font-size="16" fill="#cc0033" font-weight="700">ResNet</text>
     <text x="542" y="290" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- Faster R-CNN C4 R5 red -->
-  <g>
+  <g class="ti r5">
     <rect x="587" y="270" width="187" height="56" fill="#ffffff"/>
     <rect x="587" y="270" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="588" y="271" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="587" y="270" width="3" height="56" fill="#cc0033"/>
+    <rect x="587" y="270" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="599" y="290" font-size="10" fill="#999">2015</text>
     <text x="599" y="312" font-size="12" fill="#cc0033" font-weight="700">Faster R-CNN</text>
     <text x="733" y="290" font-size="7" fill="#999">TORCH</text>
   </g>
 
   <!-- ROW 6 -->
-  <!-- VGG C1 R6 red -->
-  <g>
+  <g class="ti r6">
     <rect x="14" y="330" width="187" height="56" fill="#ffffff"/>
     <rect x="14" y="330" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="15" y="331" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="14" y="330" width="3" height="56" fill="#cc0033"/>
+    <rect x="14" y="330" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="26" y="350" font-size="10" fill="#999">2014</text>
     <text x="26" y="372" font-size="16" fill="#cc0033" font-weight="700">VGG</text>
     <text x="160" y="350" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- Inception C2 R6 red -->
-  <g>
+  <g class="ti r6">
     <rect x="205" y="330" width="187" height="56" fill="#ffffff"/>
     <rect x="205" y="330" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="206" y="331" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="205" y="330" width="3" height="56" fill="#cc0033"/>
+    <rect x="205" y="330" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="217" y="350" font-size="10" fill="#999">2014</text>
     <text x="217" y="372" font-size="16" fill="#cc0033" font-weight="700">Inception</text>
     <text x="351" y="350" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- BERT (wide) C3-C4 R6 teal -->
-  <g>
+  <g class="ti r6">
     <rect x="396" y="330" width="378" height="56" fill="#ffffff"/>
     <rect x="396" y="330" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="397" y="331" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="396" y="330" width="3" height="56" fill="#007799"/>
+    <rect x="396" y="330" width="3" height="56" fill="#007799" class="bar b3"/>
     <text x="408" y="350" font-size="10" fill="#999">2019</text>
     <text x="408" y="372" font-size="22" fill="#007799" font-weight="700">BERT</text>
     <text x="490" y="350" font-size="8" fill="#666">MLM + NSP, 131 tests</text>
@@ -260,39 +232,34 @@
   </g>
 
   <!-- ROW 7 -->
-  <!-- ViT (wide) C1-C2 R7 red -->
-  <g>
+  <g class="ti r7">
     <rect x="14" y="390" width="378" height="56" fill="#ffffff"/>
     <rect x="14" y="390" width="378" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="15" y="391" width="376" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="14" y="390" width="3" height="56" fill="#cc0033"/>
+    <rect x="14" y="390" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="26" y="410" font-size="10" fill="#999">2021</text>
     <text x="26" y="432" font-size="22" fill="#cc0033" font-weight="700">ViT</text>
     <text x="80" y="410" font-size="8" fill="#666">an image is worth 16x16 words</text>
     <text x="351" y="410" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- MobileNetV2 C3 R7 red -->
-  <g>
+  <g class="ti r7">
     <rect x="396" y="390" width="187" height="56" fill="#ffffff"/>
     <rect x="396" y="390" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="397" y="391" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="396" y="390" width="3" height="56" fill="#cc0033"/>
+    <rect x="396" y="390" width="3" height="56" fill="#cc0033" class="bar b4"/>
     <text x="408" y="410" font-size="10" fill="#999">2018</text>
     <text x="408" y="432" font-size="11" fill="#cc0033" font-weight="700">MobileNetV2</text>
     <text x="542" y="410" font-size="7" fill="#999">TORCH</text>
   </g>
-
-  <!-- ELMo C4 R7 teal -->
-  <g>
+  <g class="ti r7">
     <rect x="587" y="390" width="187" height="56" fill="#ffffff"/>
     <rect x="587" y="390" width="187" height="56" fill="none" stroke="#fff" stroke-width="1"/>
     <rect x="588" y="391" width="185" height="54" fill="none" stroke="#808080" stroke-width="1"/>
-    <rect x="587" y="390" width="3" height="56" fill="#007799"/>
+    <rect x="587" y="390" width="3" height="56" fill="#007799" class="bar b3"/>
     <text x="599" y="410" font-size="10" fill="#999">2018</text>
     <text x="599" y="432" font-size="16" fill="#007799" font-weight="700">ELMo</text>
     <text x="733" y="410" font-size="7" fill="#999">TORCH</text>
   </g>
 
-
+  <rect class="sr" x="0" y="0" width="800" height="1.5" fill="#000" opacity=".07"/>
 </svg>
