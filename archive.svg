@@ -13,8 +13,17 @@
     .tg{animation:titleGlow 3s ease-in-out infinite}
     .ti{transition:filter .18s}
     .ti:hover{filter:brightness(1.06) drop-shadow(0 2px 6px rgba(0,0,0,.12))}
+    @keyframes aGlitch{0%,87%,87.8%,88.4%,91%,91.8%,100%{transform:translate(0,0);filter:none}87.3%{transform:translate(1.3px,0);filter:contrast(1.12) hue-rotate(5deg)}87.6%{transform:translate(-1.1px,0)}91.3%{transform:translate(.9px,0)}91.6%{transform:translate(-.8px,0)}}
+    .ag{animation:aGlitch 7.5s linear 1.5s infinite}
+    @keyframes aSlice{0%,87%,87.5%,88%,91%,91.7%,100%{opacity:0;transform:translateX(0)}87.2%{opacity:.8;transform:translateX(4px)}87.4%{opacity:0}91.4%{opacity:.65;transform:translateX(-3px)}}
+    .as1{animation:aSlice 7.5s steps(1) 1.5s infinite}
+    .as2{animation:aSlice 7.5s steps(1) 1.65s infinite}
+    @keyframes aBurst{0%,87%,87.6%,91.2%,91.8%,100%{opacity:0}87.3%{opacity:.06}91.5%{opacity:.05}}
+    .ab{animation:aBurst 7.5s steps(1) 1.5s infinite}
   </style>
   <defs>
+    <filter id="nzA"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0"/></filter>
+    <filter id="nzB"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="13"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0"/></filter>
   </defs>
 
   <rect width="800" height="454" fill="#008080"/>
@@ -35,6 +44,7 @@
   <rect x="765" y="9" width="14" height="14" fill="none" stroke="#fff" stroke-width="1"/>
   <line x1="768" y1="16" x2="776" y2="16" stroke="#000" stroke-width="1.5"/>
 
+  <g class="ag">
   <!-- ROW 1 -->
   <g class="ti r1">
     <rect x="14" y="30" width="187" height="116" fill="#ffffff"/>
@@ -261,5 +271,12 @@
     <text x="733" y="410" font-size="7" fill="#999">TORCH</text>
   </g>
 
+  </g>
+  <!-- CRT slice tears -->
+  <rect x="10" y="72" width="780" height="1.2" fill="#ff0040" opacity="0" class="as1"/>
+  <rect x="10" y="312" width="780" height="1" fill="#00bfff" opacity="0" class="as2"/>
+  <!-- static bursts -->
+  <rect width="800" height="454" filter="url(#nzA)" opacity="0" class="ab"/>
+  <rect width="800" height="454" filter="url(#nzB)" opacity="0" class="ab" style="animation-delay:.08s"/>
   <rect class="sr" x="0" y="0" width="800" height="1.5" fill="#000" opacity=".07"/>
 </svg>
