@@ -85,26 +85,21 @@ def get_level(count):
 def render_year_svg(days_data, year, y_offset):
     if not days_data:
         return ""
-    first_date = date.fromisoformat(days_data[0]["date"])
-    first_day_offset = first_date.weekday()
-    start_date = date(year, 1, 1)
-    start_weekday = start_date.weekday()
+    jan1 = date(year, 1, 1)
+    jan1_row = (jan1.weekday() + 1) % 7
 
     rects = []
     month_positions = {}
     current_month = -1
     col = 0
-    row = 0
 
     for d in days_data:
         dt = date.fromisoformat(d["date"])
         if dt.year != year:
             continue
-        day_of_year = (dt - date(year, 1, 1)).days
-        col = day_of_year // 7
-        row = (start_weekday + day_of_year) % 7
-        if row >= 7:
-            continue
+        doy = (dt - jan1).days
+        col = (jan1_row + doy) // 7
+        row = (jan1_row + doy) % 7
         level = get_level(d["count"])
         color = DARK_CELL_LEVELS[level - 1] if level > 0 else DARK_CELL_EMPTY
         x = LEFT_MARGIN + col * CELL_STEP

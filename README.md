@@ -57,6 +57,16 @@ ml & full-stack intern @ wilo SE (pune). previously built rag chatbots + drone c
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+<b>go-redis</b> -- `go` `resp2/resp3` `stdlib only`<br/><br/>
+redis-compatible in-memory key-value server written from scratch. redis 7.x wire protocol, core data structures, persistence, replication. one binary, single-threaded command execution, zero locks on the keyspace. zero external dependencies.<br/><br/>
+[<b>source</b>](https://github.com/VTongTV/go-redis)
+
+</td>
+<td width="50%" valign="top"></td>
+</tr>
 </table>
 
 <img width="100%" src="divider.svg">
