@@ -102,8 +102,8 @@ gdg cloud lead -- sci-tech innovation hackathon winner -- sih 2025 finalist -- 1
 ### pune right now
 
 <!-- PUNE-WEATHER:START -->
-31c (30c feels) -- clouds -- 39% humidity
-aqi 2/5 (fair) -- pm2.5 12.8 ug/m3 -- pune, in
+25c (25c feels) -- clouds -- 31% humidity
+aqi 2/5 (fair) -- pm2.5 14.0 ug/m3 -- pune, in
 <!-- PUNE-WEATHER:END -->
 
 <p align="center">
